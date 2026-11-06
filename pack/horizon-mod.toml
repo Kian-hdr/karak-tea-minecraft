@@ -1,0 +1,8 @@
+id = "karak_house"
+name = "Karak Tea"
+version = "0.1.0"
+description = "Village Karak Houses and superhero Karak Tea."
+authors = ["Kian Konrad Tajbakhsh"]
+api = "0.2"
+side = "both"
+capabilities = ["registries"]

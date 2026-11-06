@@ -1,0 +1,5 @@
+.venv/
+research/
+evidence/private/
+__pycache__/
+.DS_Store

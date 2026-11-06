@@ -1,0 +1,4 @@
+# Karak Tea
+Personal independent Horizon mod, namespace karak_house. Mod/drink display name Karak Tea; buildings Karak Houses. Maximum one house per village. Fixed one emerald for exactly one cup, with separate persistent 10% daily single-claim giveaway. Target Horizon 66f3981. Use vanilla textures and editable geometry; no generated raster imagery. Test in the karak-tea-test instance via a separate offscreen process and /tmp/karak-tea.sock; never control or modify the user's running game or existing saves. Repository must remain private until acceptance tests pass. No secrets, local research copies, personal paths or private logs in public commits.
+
+Owner-requested design review hold: no final village integration or public visibility until the five-design gallery has been reviewed. Current gallery uses isolated test dioramas. No claim of complete gameplay validation.

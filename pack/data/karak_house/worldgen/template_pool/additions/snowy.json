@@ -1,0 +1,21 @@
+{
+  "horizon:add_to": "minecraft:village/snowy/houses",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "lithostitched:guaranteed",
+        "count": 1,
+        "min_depth": 0,
+        "delegate": {
+          "element_type": "minecraft:single_pool_element",
+          "location": "karak_house:village/karak_house_snowy",
+          "processors": {
+            "processors": []
+          },
+          "projection": "rigid"
+        }
+      }
+    }
+  ]
+}

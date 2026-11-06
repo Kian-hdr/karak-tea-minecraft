@@ -1,0 +1,18 @@
+{
+  "criteria": {
+    "context": {
+      "trigger": "minecraft:impossible",
+      "conditions": {
+        "player": [
+          {
+            "type": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "minecraft:nbt": "{Tags:[\"karak_seller\"]}"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
