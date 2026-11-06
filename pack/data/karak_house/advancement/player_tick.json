@@ -1,0 +1,28 @@
+{
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "type": "minecraft:any_of",
+          "terms": [
+            {
+              "type": "minecraft:reference",
+              "name": "karak_house:looking_at_seller"
+            },
+            {
+              "type": "minecraft:inverted",
+              "term": {
+                "type": "minecraft:reference",
+                "name": "karak_house:looking_at_seller"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "karak_house:player_tick"
+  }
+}

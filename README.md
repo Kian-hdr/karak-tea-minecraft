@@ -59,3 +59,7 @@ python3 -m venv .venv
 ```
 
 Build output: `dist/Karak_Tea_0.1.0.hmod`. Development-only until acceptance testing is complete.
+
+## License
+
+Original mod source, models, structures and documentation are under the [MIT License](LICENSE). Referenced Minecraft assets remain the property of their respective owners and are supplied by the player’s Minecraft installation.

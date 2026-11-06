@@ -6,6 +6,8 @@ import io
 import json
 import zipfile
 import nbtlib as n
+from gameplay import write_gameplay
+from worldgen import write_worldgen
 
 ROOT = Path(__file__).resolve().parents[1]
 PACK = ROOT / 'pack'
@@ -30,7 +32,7 @@ def compound(value):
 def offer():
     return {'buy':{'id':'minecraft:emerald','count':1},
             'sell':{'id':'karak_house:karak_tea','count':1},
-            'maxUses':16,'uses':0,'rewardExp':True,'xp':1,'priceMultiplier':0.0}
+            'maxUses':16,'uses':0,'rewardExp':True,'xp':0,'priceMultiplier':0.0}
 
 class Structure:
     def __init__(self, size): self.size=size; self.blocks={}; self.entities=[]
@@ -42,10 +44,10 @@ class Structure:
         for x in range(a[0],b[0]+1):
             for y in range(a[1],b[1]+1):
                 for z in range(a[2],b[2]+1):self.put(x,y,z,name,props)
-    def jig(self,x,y,z,front,name,pool,target):
+    def jig(self,x,y,z,front,name,pool,target,final_state='smooth_stone'):
         self.put(x,y,z,'jigsaw',{'orientation':front+'_up'},
             {'id':'minecraft:jigsaw','name':name,'pool':pool,'target':target,
-             'joint':'aligned','final_state':'minecraft:smooth_stone'})
+             'joint':'aligned','final_state':'minecraft:'+final_state})
     def sign(self,x,y,z,lines,facing='north'):
         self.put(x,y,z,'dark_oak_wall_sign',{'facing':facing,'waterlogged':'false'},
             {'id':'minecraft:sign','is_waxed':True,
@@ -65,11 +67,11 @@ class Structure:
         p.write_bytes(gzip.compress(raw.getvalue(),mtime=0))
 
 THEMES = {
-    'plains': dict(width=13,depth=14,wood='dark_oak',wall='gray_terracotta',floor='polished_andesite',trim='polished_deepslate',glass='gray_stained_glass',path='stone_bricks',leaves='oak_leaves'),
+    'plains': dict(width=13,depth=12,wood='dark_oak',wall='gray_terracotta',floor='polished_andesite',trim='polished_deepslate',glass='gray_stained_glass',path='stone_bricks',leaves='oak_leaves'),
     'desert': dict(width=15,depth=13,wood='dark_oak',wall='smooth_sandstone',floor='cut_sandstone',trim='brown_terracotta',glass='black_stained_glass',path='smooth_sandstone',leaves='flowering_azalea_leaves'),
-    'savanna': dict(width=13,depth=15,wood='acacia',wall='terracotta',floor='smooth_stone',trim='deepslate_tiles',glass='brown_stained_glass',path='granite',leaves='azalea_leaves'),
-    'taiga': dict(width=13,depth=14,wood='spruce',wall='cobblestone',floor='polished_andesite',trim='deepslate_bricks',glass='glass',path='cobblestone',leaves='spruce_leaves'),
-    'snowy': dict(width=13,depth=14,wood='dark_oak',wall='calcite',floor='smooth_stone',trim='polished_deepslate',glass='light_gray_stained_glass',path='stone_bricks',leaves='spruce_leaves'),
+    'savanna': dict(width=13,depth=13,wood='acacia',wall='terracotta',floor='smooth_stone',trim='deepslate_tiles',glass='brown_stained_glass',path='granite',leaves='azalea_leaves'),
+    'taiga': dict(width=13,depth=13,wood='spruce',wall='cobblestone',floor='polished_andesite',trim='deepslate_bricks',glass='glass',path='cobblestone',leaves='spruce_leaves'),
+    'snowy': dict(width=13,depth=13,wood='dark_oak',wall='calcite',floor='smooth_stone',trim='polished_deepslate',glass='light_gray_stained_glass',path='stone_bricks',leaves='spruce_leaves'),
 }
 
 def structures():
@@ -85,14 +87,14 @@ def structures():
         s.box((1,1,6),(w-2,6,d-2),'air')
         s.box((0,1,4),(3,8,5),wood+'_planks')
         s.box((1,2,4),(3,7,4),'black_terracotta')
-        # Dark vertical fins break up the tall glazing; the inset doorway is central.
+        # The glazing and closed door surfaces share the front plane, z=5.
         s.box((4,1,5),(w-2,6,5),t['glass'])
         for x in [4,w-2]:s.box((x,1,5),(x,7,5),t['trim'])
-        s.box((4,4,5),(w-2,4,5),wood+'_slab',{'type':'bottom','waterlogged':'false'})
+        s.box((4,4,5),(w-2,4,5),wood+'_planks')
         s.box((mid,1,5),(mid+1,3,5),'air')
-        for x,hinge in [(mid,'left'),(mid+1,'right')]:
-            for y,half in [(1,'lower'),(2,'upper')]:s.put(x,y,5,wood+'_door',{'facing':'north','half':half,'hinge':hinge,'open':'false','powered':'false'})
-        s.box((mid,3,5),(mid+1,3,5),'glass')
+        for x,hinge in [(mid,'right'),(mid+1,'left')]:
+            for y,half in [(1,'lower'),(2,'upper')]:s.put(x,y,5,wood+'_door',{'facing':'south','half':half,'hinge':hinge,'open':'false','powered':'false'})
+        s.box((mid,3,5),(mid+1,3,5),t['glass'])
         # Side window band: the terrace feels connected to a real occupied interior.
         s.box((w-1,2,7),(w-1,5,d-3),t['glass'])
         s.box((0,8,4),(w-1,8,d-1),t['trim'])
@@ -101,9 +103,10 @@ def structures():
         # A warm concealed light line under the canopy.
         for x in range(4,w-1,3):s.put(x,6,4,'lantern',{'hanging':'true','waterlogged':'false'})
         # Slatted pergola over the side patio, kept away from the center walkway.
-        for z in [1,3]:s.box((0,5,z),(3,5,z),wood+'_slab',{'type':'bottom','waterlogged':'false'})
+        for z in [1,3]:s.box((w-4,4,z),(w-1,4,z),wood+'_slab',{'type':'bottom','waterlogged':'false'})
+        s.box((w-2,4,1),(w-2,4,5),wood+'_slab',{'type':'bottom','waterlogged':'false'})
         
-        for z in [1,3]:s.box((0,1,z),(0,4,z),wood+'_fence',{'east':'false','west':'false','north':'false','south':'false','waterlogged':'false'})
+        for z in [1,3]:s.box((w-2,1,z),(w-2,3,z),wood+'_fence',{'east':'false','west':'false','north':'false','south':'false','waterlogged':'false'})
         # Planter boxes and flowers around, never across, the approach.
         for x in [0,w-1]:
             s.box((x,1,0),(x,1,2),'barrel',{'facing':'up','open':'false'})
@@ -111,21 +114,53 @@ def structures():
         for x in [2,w-3]:
             s.put(x,1,2,wood+'_fence',{'east':'false','west':'false','north':'false','south':'false','waterlogged':'false'})
             s.put(x,2,2,wood+'_pressure_plate',{'powered':'false'})
-            for z,facing in [(1,'south'),(3,'north')]:s.put(x,1,z,wood+'_stairs',{'facing':facing,'half':'bottom','shape':'straight','waterlogged':'false'})
-        # Rich interior: patterned floor, banquette, a service counter and tea shelves.
+            for z,facing in [(1,'north'),(3,'south')]:s.put(x,1,z,wood+'_stairs',{'facing':facing,'half':'bottom','shape':'straight','waterlogged':'false'})
+        # A furnished cafe with a clear central aisle to the service counter.
         s.box((1,0,6),(w-2,0,d-2),wood+'_planks')
-        for x in range(2,w-2,2):s.box((x,0,6),(x,0,d-3),t['floor'])
-        s.box((1,1,7),(1,1,d-5),wood+'_stairs',{'facing':'east','half':'bottom','shape':'straight','waterlogged':'false'})
-        s.box((2,1,d-4),(w-2,1,d-4),wood+'_planks')
+        s.box((mid-1,0,6),(mid+1,0,d-4),t['floor'])
+        accent={'plains':'brown','desert':'orange','savanna':'red','taiga':'green','snowy':'light_gray'}[style]
+        for tx in [3,w-4]:
+            s.put(tx,1,7,wood+'_fence',{'east':'false','west':'false','north':'false','south':'false','waterlogged':'false'})
+            s.put(tx,2,7,wood+'_pressure_plate',{'powered':'false'})
+            for cx,facing in [(tx-1,'west'),(tx+1,'east')]:
+                s.put(cx,1,7,wood+'_stairs',{'facing':facing,'half':'bottom','shape':'straight','waterlogged':'false'})
+        # Low, open counter: no fence screen across the seller's face.
+        s.box((2,1,d-4),(w-2,1,d-4),'smooth_quartz')
         s.put(mid,1,d-4,'lectern',{'facing':'north','has_book':'false','powered':'false'})
-        # The seller is enclosed behind a counter screen with an accessible trading hatch.
-        s.box((2,2,d-4),(w-2,2,d-4),wood+'_fence',{'east':'true','west':'true','north':'false','south':'false','waterlogged':'false'})
-        s.put(mid,2,d-4,'air')
         s.box((2,1,d-2),(w-2,1,d-2),wood+'_planks')
-        s.box((2,4,d-2),(w-2,4,d-2),wood+'_slab',{'type':'bottom','waterlogged':'false'})
-        for x in range(2,w-2,2):s.put(x,2,d-2,'flower_pot')
-        for x in [3,w-4]:s.put(x,6,d-4,'lantern',{'hanging':'true','waterlogged':'false'})
-        s.put(2,1,6,'potted_fern')
+        s.box((2,2,d-1),(w-2,4,d-1),t['trim'])
+        for xx in [2,w-3]:s.box((xx,2,d-1),(xx,5,d-1),'stripped_'+wood+'_log',{'axis':'y'})
+        for yy in [3,5]:
+            s.box((2,yy,d-2),(w-3,yy,d-2),wood+'_slab',{'type':'top','waterlogged':'false'})
+            for xx in range(3,w-3,2):s.put(xx,yy+1,d-2,'flower_pot')
+        s.sign(mid,4,d-2,['KARAK TEA','Warm & spiced','1 Emerald','Made fresh'])
+        s.sign(3,4,d-2,['TODAY AT','KARAK HOUSE','','Ask for free tea'])
+        # Lower pendant clusters and ceiling beams make the tall room intimate.
+        for zz in [7,d-4]:
+            s.box((1,6,zz),(w-2,6,zz),wood+'_slab',{'type':'top','waterlogged':'false'})
+        for xx in [3,w-4]:
+            for yy in [5,6]:s.put(xx,yy,7,'iron_chain',{'axis':'y','waterlogged':'false'})
+            s.put(xx,4,7,'lantern',{'hanging':'true','waterlogged':'false'})
+        for xx in [2,w-2]:s.put(xx,1,d-5,'potted_fern')
+        s.box((1,2,6),(1,4,6),'stripped_'+wood+'_log',{'axis':'y'})
+        # Light interior wall finish, framed with timber like the reference cafe.
+        interior_wall='smooth_sandstone' if style=='desert' else ('calcite' if style=='snowy' else 'white_terracotta')
+        s.box((0,1,6),(0,6,d-2),interior_wall)
+        # Framed geometric wall panel and illuminated ledges above the dining area.
+        s.box((0,2,6),(0,5,d-5),'stripped_'+wood+'_log',{'axis':'y'})
+        s.box((0,3,7),(0,4,d-6),accent+'_terracotta')
+        s.put(0,3,7,'white_terracotta')
+        for zz in [6,d-5]:
+            s.put(1,3,zz,wood+'_slab',{'type':'top','waterlogged':'false'})
+        s.put(1,4,6,'potted_fern')
+        s.put(1,4,d-5,'lantern',{'hanging':'false','waterlogged':'false'})
+        # A compact indoor tree grows from a supported planter between the tables.
+        s.put(3,1,8,'barrel',{'facing':'up','open':'false'})
+        s.box((3,2,8),(3,4,8),'dark_oak_log',{'axis':'y'})
+        for xx in [2,4]:s.put(xx,4,8,'dark_oak_log',{'axis':'x'})
+        s.box((2,5,7),(4,5,9),'azalea_leaves',{'persistent':'true','distance':'1','waterlogged':'false'})
+        for xx,zz in [(2,7),(2,9),(4,7),(4,9),(3,8)]:
+            s.put(xx,4 if xx!=3 else 6,zz,'azalea_leaves',{'persistent':'true','distance':'1','waterlogged':'false'})
         # Roof and local identity remain related to the modern Dubai reference.
         if style=='snowy':
             for inset in range(3):
@@ -146,9 +181,10 @@ def structures():
                  'left_rotation':[n.Float(0),n.Float(0),n.Float(0),n.Float(1)],'right_rotation':[n.Float(0),n.Float(0),n.Float(0),n.Float(1)]}}
             # nbt.Byte is already typed; compound() preserves it.
             s.entities.append({'pos':list(pos),'blockPos':[int(v) for v in pos],'nbt':tag})
-        label((2.0,6.0,3.94),'KARAK\nHOUSE',3.6)
+        label((2.5,5.6,3.90),'KARAK',3.6)
+        label((2.5,4.6,3.90),'HOUSE',3.6)
         s.sign(2,2,3,['KARAK TEA','1 Emerald','5-minute powers','Ask for free tea'])
-        s.jig(mid,0,0,'north','minecraft:building_entrance','minecraft:empty','minecraft:building_entrance')
+        s.jig(mid,1,0,'north','minecraft:building_entrance','minecraft:empty','minecraft:building_entrance','air')
         seller={'id':'minecraft:villager','Pos':[mid+0.5,1.0,d-2.5],
             'Rotation':[n.Float(180.0),n.Float(0.0)],'Tags':['karak_seller'],'CustomName':'Karak Seller',
             'CustomNameVisible':True,'PersistenceRequired':True,
@@ -156,44 +192,6 @@ def structures():
             'Xp':10,'Offers':{'Recipes':[offer()]}}
         s.entities.append({'pos':seller['Pos'],'blockPos':[mid,1,d-3],'nbt':seller})
         s.save('karak_house_'+style)
-
-def pools():
-    for style in THEMES:
-        single={'element_type':'minecraft:single_pool_element','location':'karak_house:village/karak_house_'+style,
-                'processors':{'processors':[]},'projection':'rigid'}
-        gate={'element_type':'lithostitched:guaranteed','count':1,'min_depth':0,'delegate':single}
-        write(f'data/karak_house/worldgen/template_pool/additions/{style}.json',
-            {'horizon:add_to':f'minecraft:village/{style}/houses','elements':[{'weight':1,'element':gate}]})
-
-def functions():
-    write('data/karak_house/function/load.mcfunction',
-        'scoreboard objectives add karak_day dummy\nscoreboard objectives add karak_free dummy\nscoreboard objectives add karak_sys dummy\nscoreboard objectives add karak_talk minecraft.custom:minecraft.talked_to_villager\n')
-    write('data/karak_house/function/tick.mcfunction',
-        'execute store result score #today karak_sys run time of minecraft:overworld query day repetition\n'
-        'execute as @e[type=minecraft:villager,tag=karak_seller] unless score @s karak_day matches 0.. run scoreboard players set @s karak_day -1\n'
-        'execute as @e[type=minecraft:villager,tag=karak_seller] if score @s karak_day < #today karak_sys run function karak_house:new_day\n'
-        'execute as @a[scores={karak_talk=1..}] at @s if predicate karak_house:looking_at_seller run function karak_house:interact\n'
-        'scoreboard players set @a[scores={karak_talk=1..}] karak_talk 0\n')
-    write('data/karak_house/function/new_day.mcfunction',
-        'scoreboard players operation @s karak_day = #today karak_sys\n'
-        'execute store result score @s karak_free run random value 1..10\n'
-        'execute unless score @s karak_free matches 1 run scoreboard players set @s karak_free 0\n'
-        'data merge entity @s {CustomName:"Karak Seller"}\n'
-        'execute if score @s karak_free matches 1 run data merge entity @s {CustomName:"Karak Seller - Free Tea!"}\n')
-    write('data/karak_house/predicate/looking_at_seller.json', {
-        'type':'minecraft:entity_properties','entity':'this',
-        'predicate':{'minecraft:type_specific/player':{'looking_at':{
-            'minecraft:entity_type':'minecraft:villager','minecraft:nbt':'{Tags:["karak_seller"]}'}}}})
-    write('data/karak_house/advancement/entity_context.json', {'criteria':{'context':{'trigger':'minecraft:impossible','conditions':{'player':[{'type':'minecraft:entity_properties','entity':'this','predicate':{'minecraft:nbt':'{Tags:["karak_seller"]}'}}]}}}})
-    write('data/karak_house/function/interact.mcfunction',
-        'tag @s add karak_customer\n'
-        'execute at @s as @e[type=minecraft:villager,tag=karak_seller,distance=..6,sort=nearest,limit=1] if score @s karak_free matches 1 run function karak_house:giveaway\n'
-        'tag @s remove karak_customer\n')
-    write('data/karak_house/function/giveaway.mcfunction',
-        'scoreboard players set @s karak_free 0\n'
-        'data merge entity @s {CustomName:"Karak Seller"}\n'
-        'give @a[tag=karak_customer,limit=1] karak_house:karak_tea 1\n'
-        'tellraw @a[tag=karak_customer,limit=1] {"text":"This Karak Tea is on the house!","color":"gold"}\n')
 
 def cup():
     # Editable cuboids reference vanilla textures, not generated image files.
@@ -204,13 +202,13 @@ def cup():
     box([5,2,4],[11,11,5],'cup');box([5,2,11],[11,11,12],'cup');box([5,9,5],[11,10,11],'tea')
     box([12,4,6],[14,5,10],'cup');box([13,5,6],[14,9,10],'cup');box([12,9,6],[14,10,10],'cup')
     write('assets/karak_house/models/item/karak_tea.json',{'parent':'minecraft:block/block','textures':{
-        'cup':'minecraft:block/smooth_quartz','tea':'minecraft:block/brown_terracotta','particle':'minecraft:block/brown_terracotta'},
+        'cup':'minecraft:block/quartz_block_bottom','tea':'minecraft:block/brown_terracotta','particle':'minecraft:block/brown_terracotta'},
         'elements':elements,'display':{'gui':{'rotation':[25,225,0],'translation':[0,-1,0],'scale':[0.9,0.9,0.9]},
         'firstperson_righthand':{'rotation':[0,-40,0],'translation':[0,2,0],'scale':[0.65,0.65,0.65]},
         'thirdperson_righthand':{'rotation':[0,0,0],'translation':[0,3,0],'scale':[0.55,0.55,0.55]}}})
 
 def build():
-    structures();pools();functions();cup()
+    structures();write_worldgen(write,THEMES);write_gameplay(write);cup()
     out=ROOT/'dist';out.mkdir(exist_ok=True)
     file=out/'Karak_Tea_0.1.0.hmod'
     with zipfile.ZipFile(file,'w',zipfile.ZIP_DEFLATED) as z:

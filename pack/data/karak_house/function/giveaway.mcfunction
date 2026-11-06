@@ -1,4 +1,4 @@
-scoreboard players set @s karak_free 0
-data merge entity @s {CustomName:"Karak Seller"}
-give @a[tag=karak_customer,limit=1] karak_house:karak_tea 1
-tellraw @a[tag=karak_customer,limit=1] {"text":"This Karak Tea is on the house!","color":"gold"}
+scoreboard players set @e[type=minecraft:villager,tag=karak_target,limit=1] karak_free 0
+data merge entity @e[type=minecraft:villager,tag=karak_target,limit=1] {CustomName:"Karak Seller"}
+give @s karak_house:karak_tea 1
+tellraw @s {"text":"This Karak Tea is on the house!","color":"gold"}

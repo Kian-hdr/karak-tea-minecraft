@@ -1,5 +1,9 @@
 {
-  "horizon:add_to": "minecraft:village/plains/houses",
+  "horizon:add_to": [
+    "minecraft:village/plains/houses",
+    "minecraft:village/plains/zombie/houses",
+    "minecraft:village/plains/terminators"
+  ],
   "elements": [
     {
       "weight": 1,

@@ -1,5 +1,10 @@
 {
-  "horizon:add_to": "minecraft:village/desert/houses",
+  "horizon:add_to": [
+    "minecraft:village/desert/houses",
+    "minecraft:village/desert/zombie/houses",
+    "minecraft:village/desert/terminators",
+    "minecraft:village/desert/zombie/terminators"
+  ],
   "elements": [
     {
       "weight": 1,

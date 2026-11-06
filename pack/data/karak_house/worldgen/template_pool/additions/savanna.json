@@ -1,5 +1,10 @@
 {
-  "horizon:add_to": "minecraft:village/savanna/houses",
+  "horizon:add_to": [
+    "minecraft:village/savanna/houses",
+    "minecraft:village/savanna/zombie/houses",
+    "minecraft:village/savanna/terminators",
+    "minecraft:village/savanna/zombie/terminators"
+  ],
   "elements": [
     {
       "weight": 1,

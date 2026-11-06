@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/block",
   "textures": {
-    "cup": "minecraft:block/smooth_quartz",
+    "cup": "minecraft:block/quartz_block_bottom",
     "tea": "minecraft:block/brown_terracotta",
     "particle": "minecraft:block/brown_terracotta"
   },

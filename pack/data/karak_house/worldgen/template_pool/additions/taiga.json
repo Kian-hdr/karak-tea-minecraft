@@ -1,5 +1,9 @@
 {
-  "horizon:add_to": "minecraft:village/taiga/houses",
+  "horizon:add_to": [
+    "minecraft:village/taiga/houses",
+    "minecraft:village/taiga/zombie/houses",
+    "minecraft:village/taiga/terminators"
+  ],
   "elements": [
     {
       "weight": 1,

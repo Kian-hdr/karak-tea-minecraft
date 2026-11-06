@@ -1,5 +1,7 @@
 .venv/
 research/
-evidence/private/
+evidence/
 __pycache__/
 .DS_Store
+
+.test/

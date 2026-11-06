@@ -1,5 +1,9 @@
 {
-  "horizon:add_to": "minecraft:village/snowy/houses",
+  "horizon:add_to": [
+    "minecraft:village/snowy/houses",
+    "minecraft:village/snowy/zombie/houses",
+    "minecraft:village/snowy/terminators"
+  ],
   "elements": [
     {
       "weight": 1,
