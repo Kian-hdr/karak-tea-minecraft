@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="docs/assets/karak_tea_icon.png" alt="Karak Tea glass icon" width="112">
+
 # Karak Tea
 
 **A little taste of Dubai in your Minecraft villages.**<br>
@@ -30,7 +32,7 @@ Each seller has a **10% chance each Minecraft day** to offer a complimentary reg
 3. Start the instance, open **Options → Mods**, and enable **Karak Tea**.
 4. Restart the game, then explore newly generated villages.
 
-The pack targets Horizon nightly **2026-11-05 (`66f3981`)**, using the standard Horizon client. See the [installation guide](docs/Installation.md) for details.
+The pack targets Horizon nightly **2026-11-05 (`66f3981`)**, using the standard Horizon client. See the [installation guide](docs/Installation.md) for details. Follow the [Horizon catalog submission](https://github.com/horizon-rust/horizon-mods/pull/375) for its review status.
 
 ## The menu
 
@@ -54,10 +56,14 @@ Five designs bring the same modern tea-house feel to different village styles. E
 <table>
 <tr><td align="center"><strong>Plains</strong><br><img src="docs/screenshots/plains_exterior.webp" alt="Plains Karak House" width="440"></td><td align="center"><strong>Desert</strong><br><img src="docs/screenshots/desert_exterior.webp" alt="Desert Karak House" width="440"></td></tr>
 <tr><td align="center"><strong>Savanna</strong><br><img src="docs/screenshots/savanna_exterior.webp" alt="Savanna Karak House" width="440"></td><td align="center"><strong>Taiga</strong><br><img src="docs/screenshots/taiga_exterior.webp" alt="Taiga Karak House" width="440"></td></tr>
-<tr><td align="center"><strong>Snowy</strong><br><img src="docs/screenshots/snowy_rear.webp" alt="Rear of the snowy Karak House" width="440"></td><td align="center"><strong>Meet the seller</strong><br><img src="docs/screenshots/karak_seller.webp" alt="Karak Seller wearing a cream cap and apron" width="440"></td></tr>
+<tr><td align="center"><strong>Snowy</strong><br><img src="docs/screenshots/snowy_front.jpg" alt="Snowy Karak House" width="440"></td><td align="center"><strong>Meet the seller</strong><br><img src="docs/screenshots/karak_seller.webp" alt="Karak Seller wearing a cream cap and apron" width="440"></td></tr>
 </table>
 
 Each drink has its own cup and pixel-style inventory icon, with a three-dimensional model when held.
+
+<table>
+<tr><td align="center"><strong>Karak Tea</strong><br><img src="docs/screenshots/karak_tea.webp" alt="Karak Tea glass" width="290"></td><td align="center"><strong>Iced Karak</strong><br><img src="docs/screenshots/iced_karak.webp" alt="Iced Karak with a straw" width="290"></td><td align="center"><strong>Karak Pro Max</strong><br><img src="docs/screenshots/karak_pro_max.webp" alt="Karak Pro Max glass" width="290"></td></tr>
+</table>
 
 ## Make it your own
 
