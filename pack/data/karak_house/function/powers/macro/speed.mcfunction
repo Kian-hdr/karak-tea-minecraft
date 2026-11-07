@@ -1,1 +1,1 @@
-$effect give @s minecraft:speed $(seconds) $(amplifier) false
+$effect give @s minecraft:speed $(seconds) $(amplifier) true

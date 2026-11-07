@@ -46,4 +46,9 @@ class GameplayContractTests(unittest.TestCase):
         self.assertIn('karak_day < #today',tick)
         self.assertNotIn('karak_day = #today',tick)
 
+    def test_free_offer_does_not_change_seller_name(self):
+        daily=self.files['data/karak_house/function/new_day.mcfunction']
+        self.assertIn('random value 1..10',daily)
+        self.assertNotIn('Free Tea!',daily)
+
 if __name__=='__main__':unittest.main()

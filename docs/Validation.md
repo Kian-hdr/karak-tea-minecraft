@@ -1,6 +1,6 @@
 # Validation status
 
-Target: Horizon `nightly-2026-11-05-66f3981`, content API0.2. Tests ran on an Apple Silicon Mac. This is a private review candidate, not a published release.
+Target: Horizon `nightly-2026-11-05-66f3981`, content API0.2. Tests ran on an Apple Silicon Mac. This is a private review candidate, not a published release. The owner selected the unchanged standard client: native-only UI, uniform, exact higher-price protection and first-tick Milkshake immunity below describe the earlier native test candidate, not the installed standard-client behavior.
 
 ## Automated checks
 
@@ -50,3 +50,7 @@ The 0.2.0 content pack now pairs the two entry leaves when either plate is press
 A 10-second stationary visible-window sample of the final native client on the target Apple Silicon Mac, in a separate showcase copy with render distance 8, reported approximately 120 FPS (1201 frames, 119.999 average FPS). The test session closed cleanly. This single sample does not establish performance while walking, in large villages, or on other machines.
 
 A separate 20-second visible-window camera flight across the five-house showcase at render distance 8 reported 119.99 average FPS, 115.26 FPS 1% low, and 20.02 ms maximum smoothed server tick time on the same Mac. This is one controlled scene, not a guarantee for larger worlds or other hardware.
+
+## Content-mod compatibility sample
+
+On unchanged Horizon revision 66f3981, Karak Tea was loaded alongside one independent synthetic content mod. Both items worked before and after reload, and two naturally generated plains villages each contained one Karak House, the other mod's stall, and vanilla structures. This is a bounded compatibility check, not a guarantee for arbitrary modpacks. GUI-only pixel icons and their 3D held-model fallback were also checked in the stock client.

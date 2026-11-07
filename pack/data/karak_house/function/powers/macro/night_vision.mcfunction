@@ -1,1 +1,1 @@
-$effect give @s minecraft:night_vision $(seconds) $(amplifier) false
+$effect give @s minecraft:night_vision $(seconds) $(amplifier) true

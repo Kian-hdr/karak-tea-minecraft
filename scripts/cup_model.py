@@ -127,7 +127,7 @@ def cup_model(sleeve, words, iced=False, scale=1.0, kind=""):
                      'particle': 'minecraft:block/orange_terracotta'},
         'elements': elements,
         'display': {
-            'gui': {'rotation': [25, 225, 0], 'translation': [0, -1, 0], 'scale': [0.9, 1.02 if scale > 1 else 0.9, 0.9]},
+            'gui': {'rotation': [25, 225, 0], 'translation': [0, 0 if scale > 1 else 1, 0], 'scale': [0.6 if scale > 1 else 0.72, 0.68 if scale > 1 else 0.72, 0.6 if scale > 1 else 0.72]},
             'firstperson_righthand': {'rotation': [0, -30, 0], 'translation': [-1.5, 5.5, 0], 'scale': [0.42, 0.48 if scale > 1 else 0.42, 0.42]},
             'thirdperson_righthand': {'rotation': [0, 0, 0], 'translation': [0, 3, 0], 'scale': [0.55, 0.63 if scale > 1 else 0.55, 0.55]},
         },

@@ -9,6 +9,7 @@ import nbtlib as n
 from gameplay import write_gameplay
 from stations import seller_nbt, anchor_nbt, write_stations
 from cup_model import write_cup_model
+from gui_icons import write_gui_icons
 from catalog import CATALOG, offer, write_catalog
 from powers import write_powers, reconcile_owned_generated
 from doors import write_doors
@@ -199,8 +200,6 @@ def structures():
         elif style=='desert':
             s.box((1,9,5),(3,9,d-2),'cut_sandstone_slab',{'type':'bottom','waterlogged':'false'})
             for z in range(6,d-1,2):s.put(0,9,z,'sandstone_wall',{'east':'none','west':'none','north':'none','south':'none','up':'true','waterlogged':'false'})
-        elif style=='savanna':
-            s.box((w-2,8,1),(w-1,8,5),wood+'_slab',{'type':'bottom','waterlogged':'false'})
         # Large type rendered by the game's text display, with no raster logo.
         def label(pos,text,scale):
             tag={'id':'minecraft:text_display','Pos':list(pos),'Rotation':[n.Float(180.0),n.Float(0.0)],'text':text,
@@ -227,7 +226,7 @@ def build():
     structures();write_worldgen(write,THEMES);write_gameplay(write);write_stations(write);write_doors(write,THEMES)
     emitted = write_powers(write)
     reconcile_owned_generated(PACK, emitted)
-    write_catalog(write);write_cup_model(write)
+    write_catalog(write);write_cup_model(write);write_gui_icons(write)
     out=ROOT/'dist';out.mkdir(exist_ok=True)
     file=out/f'Karak_Tea_{VERSION}.hmod'
     with zipfile.ZipFile(file,'w',zipfile.ZIP_DEFLATED) as z:

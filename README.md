@@ -19,7 +19,7 @@ The repository remains private until gameplay acceptance tests pass.
 
 ## Compatibility
 
-Targets Horizon nightly-2026-11-05-66f3981 and requires the accompanying native extension. This is not a Fabric, Forge, NeoForge, or Bedrock mod. Requires the player’s own Minecraft Java Edition through Horizon.
+Targets Horizon nightly-2026-11-05-66f3981 as a standard Horizon content pack. No custom client or native extension is required. This is not a Fabric, Forge, NeoForge, or Bedrock mod. Requires the player’s own Minecraft Java Edition through Horizon.
 
 ## Installation and play
 
@@ -77,7 +77,7 @@ python3 -m venv .venv
 .venv/bin/python -m unittest discover -s tests -v
 ```
 
-Build output: `dist/Karak_Tea_0.2.0.hmod`; the native source bundle is `dist/Karak_Tea_Native_0.2.0.hnmod`. Development-only until acceptance testing is complete.
+Build output: `dist/Karak_Tea_0.2.0.hmod`. Development-only until acceptance testing is complete.
 
 ## License
 

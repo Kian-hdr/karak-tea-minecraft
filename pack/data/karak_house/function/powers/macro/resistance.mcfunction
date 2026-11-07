@@ -1,1 +1,1 @@
-$effect give @s minecraft:resistance $(seconds) $(amplifier) false
+$effect give @s minecraft:resistance $(seconds) $(amplifier) true

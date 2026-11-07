@@ -25,8 +25,7 @@ def write_gameplay(write):
         'data modify entity @s Offers.Recipes[].uses set value 0\n'
         'execute store result score @s karak_free run random value 1..10\n'
         'execute unless score @s karak_free matches 1 run scoreboard players set @s karak_free 0\n'
-        'data merge entity @s {CustomName:"Karak Seller"}\n'
-        'execute if score @s karak_free matches 1 run data merge entity @s {CustomName:"Karak Seller - Free Tea!"}\n')
+        'data merge entity @s {CustomName:"Karak Seller"}\n')
     # Kept as a reusable broad predicate; selection below uses the narrower
     # temporary target tag so a closer seller cannot steal the clicked one's cup.
     for name, tag in [('looking_at_seller', 'karak_seller'), ('looking_at_target', 'karak_target')]:

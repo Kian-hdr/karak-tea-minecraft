@@ -181,7 +181,7 @@ def write_powers(write):
             'execute store result storage karak_house:powers args.seconds int 1 run scoreboard players get @s karak_secs',
             'execute store result storage karak_house:powers args.amplifier int 1 run scoreboard players get @s karak_amp',
             f'function karak_house:powers/macro/{effect} with storage karak_house:powers args'])
-        function('macro/' + effect, [f'$effect give @s minecraft:{effect} $(seconds) $(amplifier) false'])
+        function('macro/' + effect, [f'$effect give @s minecraft:{effect} $(seconds) $(amplifier) true'])
     recompute += ['function karak_house:powers/active_flags',
                   f'execute if score @s karak_any matches 1 run tag @s add {DRINKER}',
                   f'execute if score @s karak_any matches 0 run tag @s remove {DRINKER}',

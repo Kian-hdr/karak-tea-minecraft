@@ -1,13 +1,13 @@
 # Karak Tea 0.2.0 menu
 
-This is the next preview's design and implementation contract. Native UI, uniforms, stacking and deployment remain under verification.
+This preview uses the standard Horizon client.
 
-| Drink | Fixed price | Duration | Powers |
+| Drink | Base price | Duration | Powers |
 |---|---:|---:|---|
 | Karak Tea | 1 emerald | 5 minutes | Strength IV, Speed III, Jump Boost III, Resistance II, Regeneration I, Fire Resistance I, no fall damage |
 | Iced Karak | 1 emerald | 5 minutes | Fire Resistance I and Water Breathing I |
 | Decaf Karak | 1 emerald | 5 minutes | Night Vision I and Regeneration I |
-| Karak Milkshake | 2 emeralds | 5 minutes | Clears harmful effects when consumed, then protects against Poison, Nausea and Hunger |
+| Karak Milkshake | 2 emeralds | 5 minutes | Clears harmful effects when consumed, then rapidly clears Poison, Nausea and Hunger |
 | Karak Protein Shake | 3 emeralds | 5 minutes | Strength VII |
 | Karak Pro Max | 8 emeralds | 30 minutes | Strength VI, Speed IV, Jump Boost IV, Resistance III, Regeneration II, Fire Resistance I, no fall damage |
 
@@ -17,4 +17,4 @@ The Milkshake keeps beneficial Karak powers. Ordinary Minecraft milk clears all 
 
 Each drink has its own design: the signature square glass jar, tall iced tumbler with straw, handled Decaf cup, Milkshake cup and straw, Protein shaker, and taller oversized Pro Max jar. The occasional free cup remains regular Karak Tea.
 
-The 0.2.0 native extension is intended to provide one payment input, fixed prices despite Hero of the Village, and a chef uniform only for Karak Sellers. Ordinary villagers retain their normal screens and appearance.
+This pack uses Horizon's standard villager trade screen. Its second ingredient slot remains visible and empty; copper cannot pay. Sellers use normal villager clothing. Hero of the Village can discount the higher-priced drinks. On the standard client, Poison can cause an initial damage tick before the Milkshake clears it.

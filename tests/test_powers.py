@@ -53,7 +53,7 @@ class PowerDefinitions(unittest.TestCase):
         apply = self.files['data/karak_house/function/powers/apply/strength.mcfunction']
         self.assertTrue(apply.startswith('effect clear @s minecraft:strength\n'))
         macro = self.files['data/karak_house/function/powers/macro/strength.mcfunction']
-        self.assertEqual('$effect give @s minecraft:strength $(seconds) $(amplifier) false\n', macro)
+        self.assertEqual('$effect give @s minecraft:strength $(seconds) $(amplifier) true\n', macro)
         fall = self.files['data/karak_house/function/powers/reapply.mcfunction']
         self.assertIn(f'{ATTRIBUTE} modifier add {MODIFIER} -1 add_multiplied_total', fall)
         self.assertNotIn('gravity', fall)

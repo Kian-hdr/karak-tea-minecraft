@@ -3134,13 +3134,13 @@
       ],
       "translation": [
         0,
-        -1,
+        1,
         0
       ],
       "scale": [
-        0.9,
-        0.9,
-        0.9
+        0.72,
+        0.72,
+        0.72
       ]
     },
     "firstperson_righthand": {

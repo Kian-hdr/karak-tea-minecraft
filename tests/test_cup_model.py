@@ -1,6 +1,9 @@
 import importlib.util
 from pathlib import Path
 import unittest
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
+from gui_icons import VARIANTS, write_gui_icons
 
 class CupModelTests(unittest.TestCase):
     def model(self):
@@ -21,4 +24,13 @@ class CupModelTests(unittest.TestCase):
         self.assertTrue(all(e['to'][0] <= 12.5 and e['from'][0] >= 3.5 for e in m['elements']))
         for word in ['KARAK','HOUSE']:
             self.assertTrue(any(e.get('name','').startswith('label_'+word) for e in m['elements']))
+
+    def test_inventory_icons_route_only_gui_to_flat_models(self):
+        outputs={};write_gui_icons(outputs.__setitem__)
+        for item, _, _ in VARIANTS:
+            definition=outputs[f'assets/karak_house/items/{item}.json']['model']
+            self.assertEqual('minecraft:display_context',definition['property'])
+            self.assertEqual('gui',definition['cases'][0]['when'])
+            self.assertEqual(f'karak_house:item/{item}',definition['fallback']['model'])
+            self.assertIn(f'assets/karak_house/models/item/gui/{item}.json',outputs)
 if __name__=='__main__':unittest.main()

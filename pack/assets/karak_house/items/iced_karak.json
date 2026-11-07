@@ -1,6 +1,19 @@
 {
   "model": {
-    "type": "minecraft:model",
-    "model": "karak_house:item/iced_karak"
+    "type": "minecraft:select",
+    "property": "minecraft:display_context",
+    "cases": [
+      {
+        "when": "gui",
+        "model": {
+          "type": "minecraft:model",
+          "model": "karak_house:item/gui/iced_karak"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "karak_house:item/iced_karak"
+    }
   }
 }
