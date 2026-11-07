@@ -15,7 +15,7 @@ Find a Karak House, meet its seller, and enjoy a cup with extraordinary powers.
 > **UNOFFICIAL MINECRAFT MOD. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.**<br>
 > Created by Kian Konrad · Contact: [contact@kiankonrad.me](mailto:contact@kiankonrad.me)
 
-![A Karak House in the savanna](docs/screenshots/savanna_exterior.webp)
+![A Karak House in the plains](docs/screenshots/plains_exterior.webp)
 
 ## Visit a Karak House
 
