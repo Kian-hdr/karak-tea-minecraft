@@ -34,6 +34,20 @@ Each seller has a **10% chance each Minecraft day** to offer a complimentary reg
 
 The pack targets Horizon nightly **2026-11-05 (`66f3981`)**, using the standard Horizon client. See the [installation guide](docs/Installation.md) for details. Follow the [Horizon catalog submission](https://github.com/horizon-rust/horizon-mods/pull/375) for its review status.
 
+### Set up with an AI agent
+
+Copy this prompt into an agent that can use your computer:
+
+```text
+Install Karak Tea 0.2.0 for me in my existing Horizon instance. Complete the setup and verify it works.
+
+1. Inspect the installed Horizon launcher, its selected instance, and its game version. Use the selected instance unless I specify another one. If Horizon is missing, install it using the official instructions at https://playhorizon.dev/docs/install and prepare it using my own Minecraft: Java Edition account and files. Let me handle any required sign-in or security prompts.
+2. This mod was tested with Horizon nightly 2026-11-05, revision 66f3981, for Minecraft 26.3. Check the target instance's version. If it differs, explain the compatibility uncertainty and ask me before changing that instance's version or replacing any game files.
+3. Download https://github.com/Kian-hdr/karak-tea-minecraft/releases/download/v0.2.0/Karak_Tea_0.2.0.hmod and verify SHA-256 ea0db324ecfab441994811829cd3cd544b522576438a2f597a9f956b71f57b64. Stop if the checksum does not match.
+4. Install the verified file in the target instance's horizon-mods folder and enable the mod with ID karak_house. Preserve existing settings, other mods, instances, and worlds. If a different Karak Tea version is already installed, inspect it and ask me before replacing or removing it. Don't modify a running game or its open world.
+5. Restart the game if needed. Verify Karak Tea 0.2.0 is enabled under the game's Options > Mods, and tell me how to find the mod in newly generated villages. Report the instance, version, verification result, and any step that requires my action. Do not claim that a launcher catalog listing exists unless you verify it.
+```
+
 ## The menu
 
 Each trade gives one serving. Prices below are the seller’s **base prices**; Horizon’s villager effects can change higher-priced offers.
