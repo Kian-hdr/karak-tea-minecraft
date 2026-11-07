@@ -1,3 +1,14 @@
 {
-  "item.karak_house.karak_tea": "Karak Tea"
+  "item.karak_house.karak_tea": "Karak Tea",
+  "block.karak_house.karak_tea": "Karak Tea",
+  "item.karak_house.iced_karak": "Iced Karak",
+  "block.karak_house.iced_karak": "Iced Karak",
+  "item.karak_house.decaf_karak": "Decaf Karak",
+  "block.karak_house.decaf_karak": "Decaf Karak",
+  "item.karak_house.karak_milkshake": "Karak Milkshake",
+  "block.karak_house.karak_milkshake": "Karak Milkshake",
+  "item.karak_house.karak_protein_shake": "Karak Protein Shake",
+  "block.karak_house.karak_protein_shake": "Karak Protein Shake",
+  "item.karak_house.karak_pro_max": "Karak Pro Max",
+  "block.karak_house.karak_pro_max": "Karak Pro Max"
 }

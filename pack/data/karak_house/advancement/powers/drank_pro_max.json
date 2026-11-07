@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "consume": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "karak_house:karak_pro_max"
+          ]
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "karak_house:powers/start_pro_max"
+  }
+}

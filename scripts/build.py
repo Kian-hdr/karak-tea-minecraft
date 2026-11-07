@@ -7,10 +7,16 @@ import json
 import zipfile
 import nbtlib as n
 from gameplay import write_gameplay
+from stations import seller_nbt, anchor_nbt, write_stations
+from cup_model import write_cup_model
+from catalog import CATALOG, offer, write_catalog
+from powers import write_powers, reconcile_owned_generated
+from doors import write_doors
 from worldgen import write_worldgen
 
 ROOT = Path(__file__).resolve().parents[1]
 PACK = ROOT / 'pack'
+VERSION = '0.2.0'
 
 def write(path, value):
     p = PACK / path
@@ -28,11 +34,6 @@ def compound(value):
         tags=[compound(v) for v in value]
         return n.List[type(tags[0]) if tags else n.Compound](tags)
     raise TypeError(value)
-
-def offer():
-    return {'buy':{'id':'minecraft:emerald','count':1},
-            'sell':{'id':'karak_house:karak_tea','count':1},
-            'maxUses':16,'uses':0,'rewardExp':True,'xp':0,'priceMultiplier':0.0}
 
 class Structure:
     def __init__(self, size): self.size=size; self.blocks={}; self.entities=[]
@@ -69,7 +70,7 @@ class Structure:
 THEMES = {
     'plains': dict(width=13,depth=12,wood='dark_oak',wall='gray_terracotta',floor='polished_andesite',trim='polished_deepslate',glass='gray_stained_glass',path='stone_bricks',leaves='oak_leaves'),
     'desert': dict(width=15,depth=13,wood='dark_oak',wall='smooth_sandstone',floor='cut_sandstone',trim='brown_terracotta',glass='black_stained_glass',path='smooth_sandstone',leaves='flowering_azalea_leaves'),
-    'savanna': dict(width=13,depth=13,wood='acacia',wall='terracotta',floor='smooth_stone',trim='deepslate_tiles',glass='brown_stained_glass',path='granite',leaves='azalea_leaves'),
+    'savanna': dict(width=13,depth=13,wood='acacia',wall='terracotta',floor='smooth_stone',trim='deepslate_tiles',glass='brown_stained_glass',path='polished_granite',leaves='azalea_leaves'),
     'taiga': dict(width=13,depth=13,wood='spruce',wall='cobblestone',floor='polished_andesite',trim='deepslate_bricks',glass='glass',path='cobblestone',leaves='spruce_leaves'),
     'snowy': dict(width=13,depth=13,wood='dark_oak',wall='calcite',floor='smooth_stone',trim='polished_deepslate',glass='light_gray_stained_glass',path='stone_bricks',leaves='spruce_leaves'),
 }
@@ -82,6 +83,14 @@ def structures():
         # Continuous road-to-door paving, with a clearly open 3-block center aisle.
         s.box((0,0,0),(w-1,0,d-1),t['floor'])
         s.box((mid-1,0,0),(mid+1,0,5),t['path'])
+        # A raised landing keeps terrain-matching village roads from repainting
+        # the walkway. Three inward-facing steps bridge the road without a jump.
+        stair = {'stone_bricks':'stone_brick_stairs',
+                 'smooth_sandstone':'smooth_sandstone_stairs',
+                 'polished_granite':'polished_granite_stairs',
+                 'cobblestone':'cobblestone_stairs'}[t['path']]
+        s.box((mid-1,0,0),(mid+1,0,0),stair,
+              {'facing':'south','half':'bottom','shape':'straight','waterlogged':'false'})
         # Deep enclosed volume and tall asymmetrical entrance tower.
         s.box((0,1,5),(w-1,7,d-1),t['wall'])
         s.box((1,1,6),(w-2,6,d-2),'air')
@@ -90,10 +99,13 @@ def structures():
         # The glazing and closed door surfaces share the front plane, z=5.
         s.box((4,1,5),(w-2,6,5),t['glass'])
         for x in [4,w-2]:s.box((x,1,5),(x,7,5),t['trim'])
-        s.box((4,4,5),(w-2,4,5),wood+'_planks')
+        s.box((4,4,5),(w-1,4,5),wood+'_planks')
         s.box((mid,1,5),(mid+1,3,5),'air')
         for x,hinge in [(mid,'right'),(mid+1,'left')]:
             for y,half in [(1,'lower'),(2,'upper')]:s.put(x,y,5,wood+'_door',{'facing':'south','half':half,'hinge':hinge,'open':'false','powered':'false'})
+        for px in [mid,mid+1]:
+            for pz in [4,6]:
+                s.put(px,1,pz,wood+'_pressure_plate',{'powered':'false'})
         s.box((mid,3,5),(mid+1,3,5),t['glass'])
         # Side window band: the terrace feels connected to a real occupied interior.
         s.box((w-1,2,7),(w-1,5,d-3),t['glass'])
@@ -104,7 +116,7 @@ def structures():
         for x in range(4,w-1,3):s.put(x,6,4,'lantern',{'hanging':'true','waterlogged':'false'})
         # Slatted pergola over the side patio, kept away from the center walkway.
         for z in [1,3]:s.box((w-4,4,z),(w-1,4,z),wood+'_slab',{'type':'bottom','waterlogged':'false'})
-        s.box((w-2,4,1),(w-2,4,5),wood+'_slab',{'type':'bottom','waterlogged':'false'})
+        s.box((w-2,4,1),(w-2,4,4),wood+'_slab',{'type':'bottom','waterlogged':'false'})
         
         for z in [1,3]:s.box((w-2,1,z),(w-2,3,z),wood+'_fence',{'east':'false','west':'false','north':'false','south':'false','waterlogged':'false'})
         # Planter boxes and flowers around, never across, the approach.
@@ -150,10 +162,9 @@ def structures():
         s.box((0,2,6),(0,5,d-5),'stripped_'+wood+'_log',{'axis':'y'})
         s.box((0,3,7),(0,4,d-6),accent+'_terracotta')
         s.put(0,3,7,'white_terracotta')
-        for zz in [6,d-5]:
+        for zz in [6]:
             s.put(1,3,zz,wood+'_slab',{'type':'top','waterlogged':'false'})
         s.put(1,4,6,'potted_fern')
-        s.put(1,4,d-5,'lantern',{'hanging':'false','waterlogged':'false'})
         # A compact indoor tree grows from a supported planter between the tables.
         s.put(3,1,8,'barrel',{'facing':'up','open':'false'})
         s.box((3,2,8),(3,4,8),'dark_oak_log',{'axis':'y'})
@@ -161,6 +172,24 @@ def structures():
         s.box((2,5,7),(4,5,9),'azalea_leaves',{'persistent':'true','distance':'1','waterlogged':'false'})
         for xx,zz in [(2,7),(2,9),(4,7),(4,9),(3,8)]:
             s.put(xx,4 if xx!=3 else 6,zz,'azalea_leaves',{'persistent':'true','distance':'1','waterlogged':'false'})
+        # Finish all exterior elevations after interior decoration, so interior
+        # backing blocks cannot leak through as an accidental patchwork outside.
+        for side in [0,w-1]:
+            s.box((side,1,6),(side,7,d-1),t['wall'])
+            s.box((side,1,6),(side,1,d-1),t['trim'])
+            s.box((side,7,6),(side,7,d-1),t['trim'])
+            for zz in [6,d-2]:
+                s.box((side,2,zz),(side,6,zz),'stripped_'+wood+'_log',{'axis':'y'})
+            s.box((side,2,7),(side,5,d-3),t['glass'])
+            s.box((side,4,7),(side,4,d-3),wood+'_planks')
+        s.box((1,1,d-1),(w-2,7,d-1),t['wall'])
+        s.box((0,1,d-1),(w-1,1,d-1),t['trim'])
+        s.box((0,7,d-1),(w-1,7,d-1),t['trim'])
+        s.box((1,2,d-1),(w-2,3,d-1),wood+'_planks')
+        s.box((1,4,d-1),(w-2,4,d-1),wood+'_planks')
+        for xx in [2,w-3]:
+            s.box((xx,2,d-1),(xx,6,d-1),'stripped_'+wood+'_log',{'axis':'y'})
+        s.box((3,5,d-1),(w-4,6,d-1),t['glass'])
         # Roof and local identity remain related to the modern Dubai reference.
         if style=='snowy':
             for inset in range(3):
@@ -181,36 +210,26 @@ def structures():
                  'left_rotation':[n.Float(0),n.Float(0),n.Float(0),n.Float(1)],'right_rotation':[n.Float(0),n.Float(0),n.Float(0),n.Float(1)]}}
             # nbt.Byte is already typed; compound() preserves it.
             s.entities.append({'pos':list(pos),'blockPos':[int(v) for v in pos],'nbt':tag})
-        label((2.5,5.6,3.90),'KARAK',3.6)
-        label((2.5,4.6,3.90),'HOUSE',3.6)
+        label((2.5,5.6,3.90),'KARAK',3.3)
+        label((2.5,4.6,3.90),'HOUSE',3.3)
         s.sign(2,2,3,['KARAK TEA','1 Emerald','5-minute powers','Ask for free tea'])
-        s.jig(mid,1,0,'north','minecraft:building_entrance','minecraft:empty','minecraft:building_entrance','air')
-        seller={'id':'minecraft:villager','Pos':[mid+0.5,1.0,d-2.5],
-            'Rotation':[n.Float(180.0),n.Float(0.0)],'Tags':['karak_seller'],'CustomName':'Karak Seller',
-            'CustomNameVisible':True,'PersistenceRequired':True,
-            'VillagerData':{'profession':'minecraft:librarian','level':2,'type':'minecraft:'+('snow' if style=='snowy' else style)},
-            'Xp':10,'Offers':{'Recipes':[offer()]}}
-        s.entities.append({'pos':seller['Pos'],'blockPos':[mid,1,d-3],'nbt':seller})
+        s.jig(mid,0,0,'north','minecraft:building_entrance','minecraft:empty','minecraft:building_entrance',
+              stair+'[facing=south,half=bottom,shape=straight,waterlogged=false]')
+        pos=[mid+0.5,1.0,d-2.5]
+        seller=seller_nbt(style,pos)
+        seller['Rotation']=[n.Float(180.0),n.Float(0.0)]
+        anchor=anchor_nbt(style,pos)
+        for entity in [seller,anchor]:
+            s.entities.append({'pos':pos,'blockPos':[mid,1,d-3],'nbt':entity})
         s.save('karak_house_'+style)
 
-def cup():
-    # Editable cuboids reference vanilla textures, not generated image files.
-    elements=[]
-    def box(a,b,texture):
-        elements.append({'from':a,'to':b,'faces':{face:{'texture':'#'+texture} for face in ['north','south','east','west','up','down']}})
-    box([4,1,4],[12,2,12],'cup');box([4,2,4],[5,11,12],'cup');box([11,2,4],[12,11,12],'cup')
-    box([5,2,4],[11,11,5],'cup');box([5,2,11],[11,11,12],'cup');box([5,9,5],[11,10,11],'tea')
-    box([12,4,6],[14,5,10],'cup');box([13,5,6],[14,9,10],'cup');box([12,9,6],[14,10,10],'cup')
-    write('assets/karak_house/models/item/karak_tea.json',{'parent':'minecraft:block/block','textures':{
-        'cup':'minecraft:block/quartz_block_bottom','tea':'minecraft:block/brown_terracotta','particle':'minecraft:block/brown_terracotta'},
-        'elements':elements,'display':{'gui':{'rotation':[25,225,0],'translation':[0,-1,0],'scale':[0.9,0.9,0.9]},
-        'firstperson_righthand':{'rotation':[0,-40,0],'translation':[0,2,0],'scale':[0.65,0.65,0.65]},
-        'thirdperson_righthand':{'rotation':[0,0,0],'translation':[0,3,0],'scale':[0.55,0.55,0.55]}}})
-
 def build():
-    structures();write_worldgen(write,THEMES);write_gameplay(write);cup()
+    structures();write_worldgen(write,THEMES);write_gameplay(write);write_stations(write);write_doors(write,THEMES)
+    emitted = write_powers(write)
+    reconcile_owned_generated(PACK, emitted)
+    write_catalog(write);write_cup_model(write)
     out=ROOT/'dist';out.mkdir(exist_ok=True)
-    file=out/'Karak_Tea_0.1.0.hmod'
+    file=out/f'Karak_Tea_{VERSION}.hmod'
     with zipfile.ZipFile(file,'w',zipfile.ZIP_DEFLATED) as z:
         for p in sorted(PACK.rglob('*')):
             if p.is_file():

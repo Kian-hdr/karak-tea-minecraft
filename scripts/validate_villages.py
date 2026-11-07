@@ -75,6 +75,17 @@ def transformed(piece, x, y, z):
     return piece['PosX'] + x, piece['PosY'] + y, piece['PosZ'] + z
 
 
+
+def transformed_point(piece, x, y, z):
+    """Transform a continuous point, rotating around block-cell centers.
+
+    Block positions use transformed(); entity/player centers additionally need
+    the cell-center offset on axes whose rotation reverses their sign.
+    """
+    px, py, pz = transformed(piece, x - .5, y, z - .5)
+    return px + .5, py, pz + .5
+
+
 def block_state(value):
     value = plain(value)
     if isinstance(value, dict) and set(value) == {''}:
@@ -208,10 +219,20 @@ def run_sample(args):
         return result.stdout
     metadata = {"seed": cmd("seed"), "version": cmd("version")}
     (output / "runtime.json").write_text(json.dumps(metadata, indent=2) + "\n")
-    records = []
-    seen = set()
+    records = json.loads((output / 'villages.json').read_text()) if args.resume else []
+    if args.resume:
+        actual = {str(f.relative_to(Path(args.pack))): __import__('hashlib').sha256(f.read_bytes()).hexdigest()
+                  for f in Path(args.pack).rglob('*') if f.is_file()}
+        if actual != json.loads((output / 'pack_hashes.json').read_text()):
+            raise RuntimeError('resume refused: staged pack differs from pinned original sample')
+        for row in records:
+            if row['style'] not in STYLES or tuple(row['anchor']) not in ANCHORS:
+                raise RuntimeError('resume refused: unexpected existing sample row')
+    seen = {tuple(row['locate']) for row in records}
     for style in STYLES:
         for ax, az in ANCHORS:
+            if any(row['style'] == style and row['anchor'] == [ax, az] for row in records):
+                continue
             response = cmd(f'execute positioned {ax} 80 {az} run locate structure minecraft:village_{style}')
             match = re.search(r'\[(-?\d+), ~, (-?\d+)\]', response)
             if not match:
@@ -273,6 +294,8 @@ def main():
     audit.add_argument('--resources', required=True)
     audit.add_argument('--pack', required=True)
     audit.add_argument('--output', required=True)
+    sample.add_argument('--resume', action='store_true')
+    sample.add_argument('--pack', default='.test/worldgen/pack')
     inspect = sub.add_parser('inspect')
     inspect.add_argument('--world', required=True)
     inspect.add_argument('--villages', required=True)

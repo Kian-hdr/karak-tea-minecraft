@@ -1,0 +1,2926 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "glass": "minecraft:block/white_stained_glass",
+    "tea": "minecraft:block/orange_terracotta",
+    "surface": "minecraft:block/yellow_terracotta",
+    "sleeve": "minecraft:block/blue_terracotta",
+    "label": "minecraft:block/quartz_block_bottom",
+    "trim": "minecraft:block/iron_block",
+    "particle": "minecraft:block/orange_terracotta"
+  },
+  "elements": [
+    {
+      "name": "caramel_tea",
+      "from": [
+        4.76,
+        1.767,
+        4.76
+      ],
+      "to": [
+        11.24,
+        11.384,
+        11.24
+      ],
+      "faces": {
+        "north": {
+          "texture": "#tea"
+        },
+        "south": {
+          "texture": "#tea"
+        },
+        "east": {
+          "texture": "#tea"
+        },
+        "west": {
+          "texture": "#tea"
+        },
+        "up": {
+          "texture": "#tea"
+        },
+        "down": {
+          "texture": "#tea"
+        }
+      }
+    },
+    {
+      "name": "tea_surface",
+      "from": [
+        4.76,
+        11.384,
+        4.76
+      ],
+      "to": [
+        11.24,
+        11.560999999999998,
+        11.24
+      ],
+      "faces": {
+        "north": {
+          "texture": "#surface"
+        },
+        "south": {
+          "texture": "#surface"
+        },
+        "east": {
+          "texture": "#surface"
+        },
+        "west": {
+          "texture": "#surface"
+        },
+        "up": {
+          "texture": "#surface"
+        },
+        "down": {
+          "texture": "#surface"
+        }
+      }
+    },
+    {
+      "name": "glass_base",
+      "from": [
+        4.4,
+        1.0,
+        4.4
+      ],
+      "to": [
+        11.6,
+        1.7080000000000002,
+        11.6
+      ],
+      "faces": {
+        "north": {
+          "texture": "#glass"
+        },
+        "south": {
+          "texture": "#glass"
+        },
+        "east": {
+          "texture": "#glass"
+        },
+        "west": {
+          "texture": "#glass"
+        },
+        "up": {
+          "texture": "#glass"
+        },
+        "down": {
+          "texture": "#glass"
+        }
+      }
+    },
+    {
+      "name": "glass_left",
+      "from": [
+        4.4,
+        1.7080000000000002,
+        4.4
+      ],
+      "to": [
+        4.895,
+        12.564,
+        11.6
+      ],
+      "faces": {
+        "north": {
+          "texture": "#glass"
+        },
+        "south": {
+          "texture": "#glass"
+        },
+        "east": {
+          "texture": "#glass"
+        },
+        "west": {
+          "texture": "#glass"
+        },
+        "up": {
+          "texture": "#glass"
+        },
+        "down": {
+          "texture": "#glass"
+        }
+      }
+    },
+    {
+      "name": "glass_right",
+      "from": [
+        11.105,
+        1.7080000000000002,
+        4.4
+      ],
+      "to": [
+        11.6,
+        12.564,
+        11.6
+      ],
+      "faces": {
+        "north": {
+          "texture": "#glass"
+        },
+        "south": {
+          "texture": "#glass"
+        },
+        "east": {
+          "texture": "#glass"
+        },
+        "west": {
+          "texture": "#glass"
+        },
+        "up": {
+          "texture": "#glass"
+        },
+        "down": {
+          "texture": "#glass"
+        }
+      }
+    },
+    {
+      "name": "glass_front",
+      "from": [
+        4.895,
+        1.7080000000000002,
+        4.4
+      ],
+      "to": [
+        11.105,
+        12.564,
+        4.895
+      ],
+      "faces": {
+        "north": {
+          "texture": "#glass"
+        },
+        "south": {
+          "texture": "#glass"
+        },
+        "east": {
+          "texture": "#glass"
+        },
+        "west": {
+          "texture": "#glass"
+        },
+        "up": {
+          "texture": "#glass"
+        },
+        "down": {
+          "texture": "#glass"
+        }
+      }
+    },
+    {
+      "name": "glass_back",
+      "from": [
+        4.895,
+        1.7080000000000002,
+        11.105
+      ],
+      "to": [
+        11.105,
+        12.564,
+        11.6
+      ],
+      "faces": {
+        "north": {
+          "texture": "#glass"
+        },
+        "south": {
+          "texture": "#glass"
+        },
+        "east": {
+          "texture": "#glass"
+        },
+        "west": {
+          "texture": "#glass"
+        },
+        "up": {
+          "texture": "#glass"
+        },
+        "down": {
+          "texture": "#glass"
+        }
+      }
+    },
+    {
+      "name": "rim_left",
+      "from": [
+        4.22,
+        11.974,
+        4.22
+      ],
+      "to": [
+        4.805,
+        12.977,
+        11.78
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        },
+        "south": {
+          "texture": "#label"
+        },
+        "east": {
+          "texture": "#label"
+        },
+        "west": {
+          "texture": "#label"
+        },
+        "up": {
+          "texture": "#label"
+        },
+        "down": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "rim_right",
+      "from": [
+        11.195,
+        11.974,
+        4.22
+      ],
+      "to": [
+        11.78,
+        12.977,
+        11.78
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        },
+        "south": {
+          "texture": "#label"
+        },
+        "east": {
+          "texture": "#label"
+        },
+        "west": {
+          "texture": "#label"
+        },
+        "up": {
+          "texture": "#label"
+        },
+        "down": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "rim_front",
+      "from": [
+        4.805,
+        11.974,
+        4.22
+      ],
+      "to": [
+        11.195,
+        12.977,
+        4.805
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        },
+        "south": {
+          "texture": "#label"
+        },
+        "east": {
+          "texture": "#label"
+        },
+        "west": {
+          "texture": "#label"
+        },
+        "up": {
+          "texture": "#label"
+        },
+        "down": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "rim_back",
+      "from": [
+        4.805,
+        11.974,
+        11.195
+      ],
+      "to": [
+        11.195,
+        12.977,
+        11.78
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        },
+        "south": {
+          "texture": "#label"
+        },
+        "east": {
+          "texture": "#label"
+        },
+        "west": {
+          "texture": "#label"
+        },
+        "up": {
+          "texture": "#label"
+        },
+        "down": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "glass_highlight_upper",
+      "from": [
+        4.985,
+        9.790999999999999,
+        4.382
+      ],
+      "to": [
+        5.255,
+        11.502,
+        4.436
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "glass_highlight_lower",
+      "from": [
+        4.985,
+        2.1799999999999997,
+        4.382
+      ],
+      "to": [
+        5.255,
+        3.9499999999999997,
+        4.436
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "sleeve_front",
+      "from": [
+        4.265,
+        4.54,
+        4.265
+      ],
+      "to": [
+        11.735,
+        9.437,
+        4.4
+      ],
+      "faces": {
+        "north": {
+          "texture": "#sleeve"
+        },
+        "south": {
+          "texture": "#sleeve"
+        },
+        "east": {
+          "texture": "#sleeve"
+        },
+        "west": {
+          "texture": "#sleeve"
+        },
+        "up": {
+          "texture": "#sleeve"
+        },
+        "down": {
+          "texture": "#sleeve"
+        }
+      }
+    },
+    {
+      "name": "sleeve_back",
+      "from": [
+        4.265,
+        4.54,
+        11.6
+      ],
+      "to": [
+        11.735,
+        9.437,
+        11.735
+      ],
+      "faces": {
+        "north": {
+          "texture": "#sleeve"
+        },
+        "south": {
+          "texture": "#sleeve"
+        },
+        "east": {
+          "texture": "#sleeve"
+        },
+        "west": {
+          "texture": "#sleeve"
+        },
+        "up": {
+          "texture": "#sleeve"
+        },
+        "down": {
+          "texture": "#sleeve"
+        }
+      }
+    },
+    {
+      "name": "sleeve_left",
+      "from": [
+        4.265,
+        4.54,
+        4.4
+      ],
+      "to": [
+        4.4,
+        9.437,
+        11.6
+      ],
+      "faces": {
+        "north": {
+          "texture": "#sleeve"
+        },
+        "south": {
+          "texture": "#sleeve"
+        },
+        "east": {
+          "texture": "#sleeve"
+        },
+        "west": {
+          "texture": "#sleeve"
+        },
+        "up": {
+          "texture": "#sleeve"
+        },
+        "down": {
+          "texture": "#sleeve"
+        }
+      }
+    },
+    {
+      "name": "sleeve_right",
+      "from": [
+        11.6,
+        4.54,
+        4.4
+      ],
+      "to": [
+        11.735,
+        9.437,
+        11.6
+      ],
+      "faces": {
+        "north": {
+          "texture": "#sleeve"
+        },
+        "south": {
+          "texture": "#sleeve"
+        },
+        "east": {
+          "texture": "#sleeve"
+        },
+        "west": {
+          "texture": "#sleeve"
+        },
+        "up": {
+          "texture": "#sleeve"
+        },
+        "down": {
+          "texture": "#sleeve"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_0_0_0_front",
+      "from": [
+        8.891,
+        8.3514,
+        4.22
+      ],
+      "to": [
+        9.485,
+        8.611,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_0_0_0_back",
+      "from": [
+        6.515,
+        8.3514,
+        11.753
+      ],
+      "to": [
+        7.109,
+        8.611,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_0_1_1_front",
+      "from": [
+        9.089,
+        8.0918,
+        4.22
+      ],
+      "to": [
+        9.286999999999999,
+        8.3514,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_0_1_1_back",
+      "from": [
+        6.712999999999999,
+        8.0918,
+        11.753
+      ],
+      "to": [
+        6.911,
+        8.3514,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_0_2_1_front",
+      "from": [
+        9.089,
+        7.832199999999999,
+        4.22
+      ],
+      "to": [
+        9.286999999999999,
+        8.0918,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_0_2_1_back",
+      "from": [
+        6.712999999999999,
+        7.832199999999999,
+        11.753
+      ],
+      "to": [
+        6.911,
+        8.0918,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_0_3_1_front",
+      "from": [
+        9.089,
+        7.5725999999999996,
+        4.22
+      ],
+      "to": [
+        9.286999999999999,
+        7.832199999999999,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_0_3_1_back",
+      "from": [
+        6.712999999999999,
+        7.5725999999999996,
+        11.753
+      ],
+      "to": [
+        6.911,
+        7.832199999999999,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_0_4_0_front",
+      "from": [
+        8.891,
+        7.312999999999999,
+        4.22
+      ],
+      "to": [
+        9.485,
+        7.5725999999999996,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_0_4_0_back",
+      "from": [
+        6.515,
+        7.312999999999999,
+        11.753
+      ],
+      "to": [
+        7.109,
+        7.5725999999999996,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_1_0_0_front",
+      "from": [
+        8.099,
+        8.3514,
+        4.22
+      ],
+      "to": [
+        8.693,
+        8.611,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_1_0_0_back",
+      "from": [
+        7.3069999999999995,
+        8.3514,
+        11.753
+      ],
+      "to": [
+        7.901,
+        8.611,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_1_1_0_front",
+      "from": [
+        8.495000000000001,
+        8.0918,
+        4.22
+      ],
+      "to": [
+        8.693,
+        8.3514,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_1_1_0_back",
+      "from": [
+        7.3069999999999995,
+        8.0918,
+        11.753
+      ],
+      "to": [
+        7.504999999999999,
+        8.3514,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_1_2_0_front",
+      "from": [
+        8.495000000000001,
+        7.832199999999999,
+        4.22
+      ],
+      "to": [
+        8.693,
+        8.0918,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_1_2_0_back",
+      "from": [
+        7.3069999999999995,
+        7.832199999999999,
+        11.753
+      ],
+      "to": [
+        7.504999999999999,
+        8.0918,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_1_3_0_front",
+      "from": [
+        8.495000000000001,
+        7.5725999999999996,
+        4.22
+      ],
+      "to": [
+        8.693,
+        7.832199999999999,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_1_3_0_back",
+      "from": [
+        7.3069999999999995,
+        7.5725999999999996,
+        11.753
+      ],
+      "to": [
+        7.504999999999999,
+        7.832199999999999,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_1_4_0_front",
+      "from": [
+        8.099,
+        7.312999999999999,
+        4.22
+      ],
+      "to": [
+        8.693,
+        7.5725999999999996,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_1_4_0_back",
+      "from": [
+        7.3069999999999995,
+        7.312999999999999,
+        11.753
+      ],
+      "to": [
+        7.901,
+        7.5725999999999996,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_2_0_0_front",
+      "from": [
+        7.307,
+        8.3514,
+        4.22
+      ],
+      "to": [
+        7.901000000000001,
+        8.611,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_2_0_0_back",
+      "from": [
+        8.099,
+        8.3514,
+        11.753
+      ],
+      "to": [
+        8.693,
+        8.611,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_2_1_0_front",
+      "from": [
+        7.703,
+        8.0918,
+        4.22
+      ],
+      "to": [
+        7.901000000000001,
+        8.3514,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_2_1_0_back",
+      "from": [
+        8.099,
+        8.0918,
+        11.753
+      ],
+      "to": [
+        8.297,
+        8.3514,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_2_2_0_front",
+      "from": [
+        7.504999999999999,
+        7.832199999999999,
+        4.22
+      ],
+      "to": [
+        7.901000000000001,
+        8.0918,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_2_2_0_back",
+      "from": [
+        8.099,
+        7.832199999999999,
+        11.753
+      ],
+      "to": [
+        8.495000000000001,
+        8.0918,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_2_3_0_front",
+      "from": [
+        7.703,
+        7.5725999999999996,
+        4.22
+      ],
+      "to": [
+        7.901000000000001,
+        7.832199999999999,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_2_3_0_back",
+      "from": [
+        8.099,
+        7.5725999999999996,
+        11.753
+      ],
+      "to": [
+        8.297,
+        7.832199999999999,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_2_4_0_front",
+      "from": [
+        7.307,
+        7.312999999999999,
+        4.22
+      ],
+      "to": [
+        7.901000000000001,
+        7.5725999999999996,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_2_4_0_back",
+      "from": [
+        8.099,
+        7.312999999999999,
+        11.753
+      ],
+      "to": [
+        8.693,
+        7.5725999999999996,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_3_0_0_front",
+      "from": [
+        6.713,
+        8.3514,
+        4.22
+      ],
+      "to": [
+        7.109,
+        8.611,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_3_0_0_back",
+      "from": [
+        8.891,
+        8.3514,
+        11.753
+      ],
+      "to": [
+        9.286999999999999,
+        8.611,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_3_1_0_front",
+      "from": [
+        6.9110000000000005,
+        8.0918,
+        4.22
+      ],
+      "to": [
+        7.109,
+        8.3514,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_3_1_0_back",
+      "from": [
+        8.891,
+        8.0918,
+        11.753
+      ],
+      "to": [
+        9.088999999999999,
+        8.3514,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_3_1_2_front",
+      "from": [
+        6.5150000000000015,
+        8.0918,
+        4.22
+      ],
+      "to": [
+        6.713,
+        8.3514,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_3_1_2_back",
+      "from": [
+        9.286999999999999,
+        8.0918,
+        11.753
+      ],
+      "to": [
+        9.485,
+        8.3514,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_3_2_0_front",
+      "from": [
+        6.9110000000000005,
+        7.832199999999999,
+        4.22
+      ],
+      "to": [
+        7.109,
+        8.0918,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_3_2_0_back",
+      "from": [
+        8.891,
+        7.832199999999999,
+        11.753
+      ],
+      "to": [
+        9.088999999999999,
+        8.0918,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_3_2_2_front",
+      "from": [
+        6.5150000000000015,
+        7.832199999999999,
+        4.22
+      ],
+      "to": [
+        6.713,
+        8.0918,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_3_2_2_back",
+      "from": [
+        9.286999999999999,
+        7.832199999999999,
+        11.753
+      ],
+      "to": [
+        9.485,
+        8.0918,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_3_3_0_front",
+      "from": [
+        6.9110000000000005,
+        7.5725999999999996,
+        4.22
+      ],
+      "to": [
+        7.109,
+        7.832199999999999,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_3_3_0_back",
+      "from": [
+        8.891,
+        7.5725999999999996,
+        11.753
+      ],
+      "to": [
+        9.088999999999999,
+        7.832199999999999,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_3_3_2_front",
+      "from": [
+        6.5150000000000015,
+        7.5725999999999996,
+        4.22
+      ],
+      "to": [
+        6.713,
+        7.832199999999999,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_3_3_2_back",
+      "from": [
+        9.286999999999999,
+        7.5725999999999996,
+        11.753
+      ],
+      "to": [
+        9.485,
+        7.832199999999999,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_3_4_0_front",
+      "from": [
+        6.713,
+        7.312999999999999,
+        4.22
+      ],
+      "to": [
+        7.109,
+        7.5725999999999996,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_ICED_3_4_0_back",
+      "from": [
+        8.891,
+        7.312999999999999,
+        11.753
+      ],
+      "to": [
+        9.286999999999999,
+        7.5725999999999996,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_0_0_0_front",
+      "from": [
+        9.683000000000002,
+        6.463399999999999,
+        4.22
+      ],
+      "to": [
+        9.881,
+        6.722999999999999,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_0_0_0_back",
+      "from": [
+        6.119,
+        6.463399999999999,
+        11.753
+      ],
+      "to": [
+        6.317,
+        6.722999999999999,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_0_0_2_front",
+      "from": [
+        9.286999999999999,
+        6.463399999999999,
+        4.22
+      ],
+      "to": [
+        9.485,
+        6.722999999999999,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_0_0_2_back",
+      "from": [
+        6.515000000000001,
+        6.463399999999999,
+        11.753
+      ],
+      "to": [
+        6.713,
+        6.722999999999999,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_0_1_0_front",
+      "from": [
+        9.485,
+        6.203799999999998,
+        4.22
+      ],
+      "to": [
+        9.881,
+        6.463399999999999,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_0_1_0_back",
+      "from": [
+        6.119,
+        6.203799999999998,
+        11.753
+      ],
+      "to": [
+        6.515000000000001,
+        6.463399999999999,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_0_2_0_front",
+      "from": [
+        9.683000000000002,
+        5.9441999999999995,
+        4.22
+      ],
+      "to": [
+        9.881,
+        6.203799999999998,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_0_2_0_back",
+      "from": [
+        6.119,
+        5.9441999999999995,
+        11.753
+      ],
+      "to": [
+        6.317,
+        6.203799999999998,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_0_3_0_front",
+      "from": [
+        9.485,
+        5.6846,
+        4.22
+      ],
+      "to": [
+        9.881,
+        5.9441999999999995,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_0_3_0_back",
+      "from": [
+        6.119,
+        5.6846,
+        11.753
+      ],
+      "to": [
+        6.515000000000001,
+        5.9441999999999995,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_0_4_0_front",
+      "from": [
+        9.683000000000002,
+        5.425,
+        4.22
+      ],
+      "to": [
+        9.881,
+        5.6846,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_0_4_0_back",
+      "from": [
+        6.119,
+        5.425,
+        11.753
+      ],
+      "to": [
+        6.317,
+        5.6846,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_0_4_2_front",
+      "from": [
+        9.286999999999999,
+        5.425,
+        4.22
+      ],
+      "to": [
+        9.485,
+        5.6846,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_0_4_2_back",
+      "from": [
+        6.515000000000001,
+        5.425,
+        11.753
+      ],
+      "to": [
+        6.713,
+        5.6846,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_0_1_front",
+      "from": [
+        8.693,
+        6.463399999999999,
+        4.22
+      ],
+      "to": [
+        8.891,
+        6.722999999999999,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_0_1_back",
+      "from": [
+        7.109,
+        6.463399999999999,
+        11.753
+      ],
+      "to": [
+        7.307,
+        6.722999999999999,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_1_0_front",
+      "from": [
+        8.891,
+        6.203799999999998,
+        4.22
+      ],
+      "to": [
+        9.089,
+        6.463399999999999,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_1_0_back",
+      "from": [
+        6.911,
+        6.203799999999998,
+        11.753
+      ],
+      "to": [
+        7.109,
+        6.463399999999999,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_1_2_front",
+      "from": [
+        8.495000000000001,
+        6.203799999999998,
+        4.22
+      ],
+      "to": [
+        8.693,
+        6.463399999999999,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_1_2_back",
+      "from": [
+        7.307,
+        6.203799999999998,
+        11.753
+      ],
+      "to": [
+        7.505,
+        6.463399999999999,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_2_0_front",
+      "from": [
+        8.495000000000001,
+        5.9441999999999995,
+        4.22
+      ],
+      "to": [
+        9.089,
+        6.203799999999998,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_2_0_back",
+      "from": [
+        6.911,
+        5.9441999999999995,
+        11.753
+      ],
+      "to": [
+        7.505,
+        6.203799999999998,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_3_0_front",
+      "from": [
+        8.891,
+        5.6846,
+        4.22
+      ],
+      "to": [
+        9.089,
+        5.9441999999999995,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_3_0_back",
+      "from": [
+        6.911,
+        5.6846,
+        11.753
+      ],
+      "to": [
+        7.109,
+        5.9441999999999995,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_3_2_front",
+      "from": [
+        8.495000000000001,
+        5.6846,
+        4.22
+      ],
+      "to": [
+        8.693,
+        5.9441999999999995,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_3_2_back",
+      "from": [
+        7.307,
+        5.6846,
+        11.753
+      ],
+      "to": [
+        7.505,
+        5.9441999999999995,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_4_0_front",
+      "from": [
+        8.891,
+        5.425,
+        4.22
+      ],
+      "to": [
+        9.089,
+        5.6846,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_4_0_back",
+      "from": [
+        6.911,
+        5.425,
+        11.753
+      ],
+      "to": [
+        7.109,
+        5.6846,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_4_2_front",
+      "from": [
+        8.495000000000001,
+        5.425,
+        4.22
+      ],
+      "to": [
+        8.693,
+        5.6846,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_4_2_back",
+      "from": [
+        7.307,
+        5.425,
+        11.753
+      ],
+      "to": [
+        7.505,
+        5.6846,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_0_0_front",
+      "from": [
+        7.901000000000001,
+        6.463399999999999,
+        4.22
+      ],
+      "to": [
+        8.297,
+        6.722999999999999,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_0_0_back",
+      "from": [
+        7.703,
+        6.463399999999999,
+        11.753
+      ],
+      "to": [
+        8.099,
+        6.722999999999999,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_1_0_front",
+      "from": [
+        8.099,
+        6.203799999999998,
+        4.22
+      ],
+      "to": [
+        8.297,
+        6.463399999999999,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_1_0_back",
+      "from": [
+        7.703,
+        6.203799999999998,
+        11.753
+      ],
+      "to": [
+        7.901000000000001,
+        6.463399999999999,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_1_2_front",
+      "from": [
+        7.703,
+        6.203799999999998,
+        4.22
+      ],
+      "to": [
+        7.901000000000001,
+        6.463399999999999,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_1_2_back",
+      "from": [
+        8.099,
+        6.203799999999998,
+        11.753
+      ],
+      "to": [
+        8.297,
+        6.463399999999999,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_2_0_front",
+      "from": [
+        7.901000000000001,
+        5.9441999999999995,
+        4.22
+      ],
+      "to": [
+        8.297,
+        6.203799999999998,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_2_0_back",
+      "from": [
+        7.703,
+        5.9441999999999995,
+        11.753
+      ],
+      "to": [
+        8.099,
+        6.203799999999998,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_3_0_front",
+      "from": [
+        8.099,
+        5.6846,
+        4.22
+      ],
+      "to": [
+        8.297,
+        5.9441999999999995,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_3_0_back",
+      "from": [
+        7.703,
+        5.6846,
+        11.753
+      ],
+      "to": [
+        7.901000000000001,
+        5.9441999999999995,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_3_2_front",
+      "from": [
+        7.703,
+        5.6846,
+        4.22
+      ],
+      "to": [
+        7.901000000000001,
+        5.9441999999999995,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_3_2_back",
+      "from": [
+        8.099,
+        5.6846,
+        11.753
+      ],
+      "to": [
+        8.297,
+        5.9441999999999995,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_4_0_front",
+      "from": [
+        8.099,
+        5.425,
+        4.22
+      ],
+      "to": [
+        8.297,
+        5.6846,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_4_0_back",
+      "from": [
+        7.703,
+        5.425,
+        11.753
+      ],
+      "to": [
+        7.901000000000001,
+        5.6846,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_4_2_front",
+      "from": [
+        7.703,
+        5.425,
+        4.22
+      ],
+      "to": [
+        7.901000000000001,
+        5.6846,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_4_2_back",
+      "from": [
+        8.099,
+        5.425,
+        11.753
+      ],
+      "to": [
+        8.297,
+        5.6846,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_0_1_front",
+      "from": [
+        7.109,
+        6.463399999999999,
+        4.22
+      ],
+      "to": [
+        7.307,
+        6.722999999999999,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_0_1_back",
+      "from": [
+        8.693,
+        6.463399999999999,
+        11.753
+      ],
+      "to": [
+        8.891,
+        6.722999999999999,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_1_0_front",
+      "from": [
+        7.307,
+        6.203799999999998,
+        4.22
+      ],
+      "to": [
+        7.504999999999999,
+        6.463399999999999,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_1_0_back",
+      "from": [
+        8.495000000000001,
+        6.203799999999998,
+        11.753
+      ],
+      "to": [
+        8.693,
+        6.463399999999999,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_1_2_front",
+      "from": [
+        6.911,
+        6.203799999999998,
+        4.22
+      ],
+      "to": [
+        7.109,
+        6.463399999999999,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_1_2_back",
+      "from": [
+        8.891,
+        6.203799999999998,
+        11.753
+      ],
+      "to": [
+        9.089,
+        6.463399999999999,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_2_0_front",
+      "from": [
+        6.911,
+        5.9441999999999995,
+        4.22
+      ],
+      "to": [
+        7.504999999999999,
+        6.203799999999998,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_2_0_back",
+      "from": [
+        8.495000000000001,
+        5.9441999999999995,
+        11.753
+      ],
+      "to": [
+        9.089,
+        6.203799999999998,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_3_0_front",
+      "from": [
+        7.307,
+        5.6846,
+        4.22
+      ],
+      "to": [
+        7.504999999999999,
+        5.9441999999999995,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_3_0_back",
+      "from": [
+        8.495000000000001,
+        5.6846,
+        11.753
+      ],
+      "to": [
+        8.693,
+        5.9441999999999995,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_3_2_front",
+      "from": [
+        6.911,
+        5.6846,
+        4.22
+      ],
+      "to": [
+        7.109,
+        5.9441999999999995,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_3_2_back",
+      "from": [
+        8.891,
+        5.6846,
+        11.753
+      ],
+      "to": [
+        9.089,
+        5.9441999999999995,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_4_0_front",
+      "from": [
+        7.307,
+        5.425,
+        4.22
+      ],
+      "to": [
+        7.504999999999999,
+        5.6846,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_4_0_back",
+      "from": [
+        8.495000000000001,
+        5.425,
+        11.753
+      ],
+      "to": [
+        8.693,
+        5.6846,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_4_2_front",
+      "from": [
+        6.911,
+        5.425,
+        4.22
+      ],
+      "to": [
+        7.109,
+        5.6846,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_4_2_back",
+      "from": [
+        8.891,
+        5.425,
+        11.753
+      ],
+      "to": [
+        9.089,
+        5.6846,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_4_0_0_front",
+      "from": [
+        6.515,
+        6.463399999999999,
+        4.22
+      ],
+      "to": [
+        6.713,
+        6.722999999999999,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_4_0_0_back",
+      "from": [
+        9.286999999999999,
+        6.463399999999999,
+        11.753
+      ],
+      "to": [
+        9.485,
+        6.722999999999999,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_4_0_2_front",
+      "from": [
+        6.119,
+        6.463399999999999,
+        4.22
+      ],
+      "to": [
+        6.316999999999999,
+        6.722999999999999,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_4_0_2_back",
+      "from": [
+        9.683000000000002,
+        6.463399999999999,
+        11.753
+      ],
+      "to": [
+        9.881,
+        6.722999999999999,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_4_1_0_front",
+      "from": [
+        6.316999999999999,
+        6.203799999999998,
+        4.22
+      ],
+      "to": [
+        6.713,
+        6.463399999999999,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_4_1_0_back",
+      "from": [
+        9.286999999999999,
+        6.203799999999998,
+        11.753
+      ],
+      "to": [
+        9.683000000000002,
+        6.463399999999999,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_4_2_0_front",
+      "from": [
+        6.515,
+        5.9441999999999995,
+        4.22
+      ],
+      "to": [
+        6.713,
+        6.203799999999998,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_4_2_0_back",
+      "from": [
+        9.286999999999999,
+        5.9441999999999995,
+        11.753
+      ],
+      "to": [
+        9.485,
+        6.203799999999998,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_4_3_0_front",
+      "from": [
+        6.316999999999999,
+        5.6846,
+        4.22
+      ],
+      "to": [
+        6.713,
+        5.9441999999999995,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_4_3_0_back",
+      "from": [
+        9.286999999999999,
+        5.6846,
+        11.753
+      ],
+      "to": [
+        9.683000000000002,
+        5.9441999999999995,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_4_4_0_front",
+      "from": [
+        6.515,
+        5.425,
+        4.22
+      ],
+      "to": [
+        6.713,
+        5.6846,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_4_4_0_back",
+      "from": [
+        9.286999999999999,
+        5.425,
+        11.753
+      ],
+      "to": [
+        9.485,
+        5.6846,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_4_4_2_front",
+      "from": [
+        6.119,
+        5.425,
+        4.22
+      ],
+      "to": [
+        6.316999999999999,
+        5.6846,
+        4.247
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_4_4_2_back",
+      "from": [
+        9.683000000000002,
+        5.425,
+        11.753
+      ],
+      "to": [
+        9.881,
+        5.6846,
+        11.78
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "ice_1",
+      "from": [
+        5.3,
+        11.560999999999998,
+        5.48
+      ],
+      "to": [
+        7.1899999999999995,
+        12.445999999999998,
+        7.37
+      ],
+      "faces": {
+        "north": {
+          "texture": "#glass"
+        },
+        "south": {
+          "texture": "#glass"
+        },
+        "east": {
+          "texture": "#glass"
+        },
+        "west": {
+          "texture": "#glass"
+        },
+        "up": {
+          "texture": "#glass"
+        },
+        "down": {
+          "texture": "#glass"
+        }
+      }
+    },
+    {
+      "name": "ice_2",
+      "from": [
+        8.18,
+        11.560999999999998,
+        8.0
+      ],
+      "to": [
+        10.25,
+        12.564,
+        10.07
+      ],
+      "faces": {
+        "north": {
+          "texture": "#glass"
+        },
+        "south": {
+          "texture": "#glass"
+        },
+        "east": {
+          "texture": "#glass"
+        },
+        "west": {
+          "texture": "#glass"
+        },
+        "up": {
+          "texture": "#glass"
+        },
+        "down": {
+          "texture": "#glass"
+        }
+      }
+    },
+    {
+      "name": "iced_straw",
+      "from": [
+        9.25,
+        10.5,
+        8.3
+      ],
+      "to": [
+        9.85,
+        15.2,
+        8.9
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        },
+        "south": {
+          "texture": "#label"
+        },
+        "east": {
+          "texture": "#label"
+        },
+        "west": {
+          "texture": "#label"
+        },
+        "up": {
+          "texture": "#label"
+        },
+        "down": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "iced_straw_stripe",
+      "from": [
+        9.23,
+        13.1,
+        8.28
+      ],
+      "to": [
+        9.87,
+        13.6,
+        8.92
+      ],
+      "faces": {
+        "north": {
+          "texture": "#sleeve"
+        },
+        "south": {
+          "texture": "#sleeve"
+        },
+        "east": {
+          "texture": "#sleeve"
+        },
+        "west": {
+          "texture": "#sleeve"
+        },
+        "up": {
+          "texture": "#sleeve"
+        },
+        "down": {
+          "texture": "#sleeve"
+        }
+      }
+    }
+  ],
+  "display": {
+    "gui": {
+      "rotation": [
+        25,
+        225,
+        0
+      ],
+      "translation": [
+        0,
+        -1,
+        0
+      ],
+      "scale": [
+        0.9,
+        0.9,
+        0.9
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        0,
+        -30,
+        0
+      ],
+      "translation": [
+        -1.5,
+        5.5,
+        0
+      ],
+      "scale": [
+        0.42,
+        0.42,
+        0.42
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        3,
+        0
+      ],
+      "scale": [
+        0.55,
+        0.55,
+        0.55
+      ]
+    }
+  }
+}

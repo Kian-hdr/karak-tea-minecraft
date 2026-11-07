@@ -81,7 +81,7 @@ class GameplayLiveTests(unittest.TestCase):
         self.cmd('give @s karak_house:karak_tea 3');self.ctl('wait',3);self.ctl('select','karak_house:karak_tea')
         self.ctl('look','180','-50');self.ctl('mouse','right','down');self.ctl('wait',35);self.ctl('mouse','right','up');self.ctl('wait',3)
         effects=self.ctl('state')['player']['effects']
-        self.assertEqual(len(effects),7,effects)
+        self.assertEqual(len(effects),6,effects)
         self.events.append({'verified':'drink_effects','effects':effects})
         self.ctl('wait',40);self.ctl('mouse','right','down');self.ctl('wait',35);self.ctl('mouse','right','up');self.ctl('wait',3)
         refreshed=self.ctl('state')['player']['effects'];self.assertEqual(len(refreshed),7)

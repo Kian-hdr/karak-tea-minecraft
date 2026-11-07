@@ -1,0 +1,34 @@
+{
+  "template": "minecraft:potion",
+  "max_stack_size": 16,
+  "components": {
+    "minecraft:item_name": "Karak Pro Max",
+    "minecraft:item_model": "karak_house:karak_pro_max",
+    "minecraft:lore": [
+      {
+        "text": "30 minutes: Strength VI, Speed IV, Jump Boost IV.",
+        "color": "gray",
+        "italic": false
+      },
+      {
+        "text": "Resistance III, Regeneration II, Fire Resistance; no fall damage.",
+        "color": "gray",
+        "italic": false
+      },
+      {
+        "text": "Stacks with different Karak drinks; same drink refreshes its timer.",
+        "color": "gray",
+        "italic": false
+      }
+    ],
+    "minecraft:consumable": {
+      "consume_seconds": 1.6,
+      "animation": "drink",
+      "sound": "minecraft:entity.generic.drink",
+      "has_consume_particles": false,
+      "on_consume_effects": []
+    },
+    "!minecraft:potion_contents": {},
+    "!minecraft:use_remainder": {}
+  }
+}

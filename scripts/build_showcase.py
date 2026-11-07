@@ -7,22 +7,52 @@ This script never starts/stops a game or changes the launcher's selected instanc
 from __future__ import annotations
 
 import argparse
+import gzip
 import hashlib
+import io
 import json
+import struct
 import subprocess
+import uuid
 import zipfile
+import zlib
 from pathlib import Path
 
-from build import ROOT, THEMES
+import nbtlib
+
+from build import ROOT, THEMES, VERSION
 
 WORLD = "Karak_Tea_Showcase"
 FLOOR_Y = 64
 SPAWN = (6.5, 65, -5.5)
-PLOTS = [
-    {"style": style, "x": -40 + i * 20, "z": 12,
-     "width": THEMES[style]["width"], "depth": THEMES[style]["depth"]}
-    for i, style in enumerate(THEMES)
-]
+def plots_from_structures(archive: Path | None = None) -> list[dict]:
+    plots = []
+    for i, style in enumerate(THEMES):
+        relative = f"data/karak_house/structure/village/karak_house_{style}.nbt"
+        if archive:
+            with zipfile.ZipFile(archive) as z:
+                structure = nbtlib.File.parse(io.BytesIO(gzip.decompress(z.read(relative))))
+        else:
+            structure = nbtlib.load(ROOT / "pack" / relative)
+        palette = structure["palette"]
+        jigs = [b for b in structure["blocks"] if str(palette[b["state"]]["id"]) == "minecraft:jigsaw"]
+        if len(jigs) != 1:
+            raise ValueError(f"{style}: expected exactly one entrance connector")
+        connector = list(map(int, jigs[0]["pos"]))
+        doors = [list(map(int, b["pos"])) for b in structure["blocks"]
+                 if str(palette[b["state"]]["id"]).endswith("_door")
+                 and str(palette[b["state"]].get("properties", {}).get("half")) == "lower"]
+        lecterns = [list(map(int, b["pos"])) for b in structure["blocks"]
+                    if str(palette[b["state"]]["id"]) == "minecraft:lectern"]
+        plots.append({"style": style, "x": -40 + i * 20, "z": 12,
+                      "width": int(structure["size"][0]), "depth": int(structure["size"][2]),
+                      "base_y": FLOOR_Y + 1 - connector[1], "connector": connector,
+                      "final_state": str(jigs[0]["nbt"]["final_state"]),
+                      "doors": doors, "lectern": lecterns[0]})
+    return plots
+
+
+PLOTS = plots_from_structures()
 
 
 def wall_sign(x: int, y: int, z: int, lines: list[str]) -> list[str]:
@@ -32,33 +62,39 @@ def wall_sign(x: int, y: int, z: int, lines: list[str]) -> list[str]:
             f"{{is_waxed:1b,front_text:{{messages:{messages},color:\"black\",has_glowing_text:0b}}}}"]
 
 
-def plan() -> list[str]:
+def plan(plots: list[dict] | None = None) -> list[str]:
+    plots = PLOTS if plots is None else plots
     commands = ["gamemode creative", "difficulty peaceful", "weather clear",
                 "time set 6000", "gamerule minecraft:advance_time false",
                 "gamerule minecraft:advance_weather false",
                 "gamerule minecraft:spawn_mobs false",
                 "gamerule minecraft:keep_inventory true",
-                "gamerule minecraft:respawn_radius 0", "effect clear @s"]
+                "gamerule minecraft:respawn_radius 0", "effect clear @s",
+                "kill @e[type=villager,tag=karak_seller,x=-46,y=61,z=-14,dx=106,dy=17,dz=54]",
+                "kill @e[type=text_display,x=-46,y=61,z=-14,dx=106,dy=17,dz=54]",
+                "kill @e[type=item,x=-46,y=61,z=-14,dx=106,dy=17,dz=54]"]
     # Small batches stay below vanilla's fill volume limit.
     for x in range(-46, 61, 18):
         end = min(x + 17, 60)
         commands += [f"fill {x} 61 -14 {end} 63 40 dirt",
                      f"fill {x} 64 -14 {end} 64 40 grass_block",
-                     f"fill {x} 65 -14 {end} 78 40 air"]
+                     f"fill {x} 65 -14 {end} 86 40 air",
+                     f"fill {x} 87 -14 {end} 110 40 air"]
     commands += ["fill -45 64 -1 59 64 7 stone_bricks",
                  "fill -45 64 -2 59 64 -2 polished_andesite",
                  "fill -45 64 8 59 64 8 polished_andesite",
                  "fill 1 64 -10 12 64 7 stone_bricks"]
     ground = {"plains": "grass_block", "desert": "sand",
               "savanna": "red_sand", "taiga": "podzol", "snowy": "snow_block"}
-    for p in PLOTS:
+    for p in plots:
         x, z, width, style = p["x"], p["z"], p["width"], p["style"]
         mid = x + width // 2
+        jx, jy, jz = p["connector"]
         commands += [f"fill {x - 1} 64 9 {x + 16} 64 28 {ground[style]}",
-                     f"place template karak_house:village/karak_house_{style} {x} 64 {z}",
-                     f"setblock {mid} 65 {z} air",
+                     f"place template karak_house:village/karak_house_{style} {x} {p['base_y']} {z}",
+                     f"setblock {x+jx} {p['base_y']+jy} {z+jz} {p['final_state']}",
                      f"fill {mid - 1} 64 7 {mid + 2} 64 {z} {THEMES[style]['path']}",
-                     f"tag @e[type=villager,tag=karak_seller,x={mid},y=65,z=22,distance=..8,limit=1,sort=nearest] add showcase_{style}"]
+                     f"tag @e[type=villager,tag=karak_seller,x={mid},y={p['base_y']+1},z={z + p['depth'] - 3},distance=..8,limit=1,sort=nearest] add showcase_{style}"]
         commands += wall_sign(x, 66, 9, [style.upper(), "KARAK HOUSE", "1 emerald / cup", "Walk inside"])
     for x in [-43, -23, -3, 17, 37, 57]:
         commands += [f"setblock {x} 65 0 stone_brick_wall",
@@ -81,9 +117,136 @@ def verify_pack(archive: Path) -> str:
                 rel = p.relative_to(ROOT / "pack").as_posix()
                 if z.read(rel) != p.read_bytes():
                     raise RuntimeError(f"Archive is stale: {rel}; await root's integration rebuild")
-    if any(p["depth"] != 13 for p in PLOTS):
-        raise RuntimeError("Await integrated depth-13 structures")
+    for p in PLOTS:
+        structure = nbtlib.load(ROOT / f"pack/data/karak_house/structure/village/karak_house_{p['style']}.nbt")
+        size = list(map(int, structure["size"]))
+        if (size[0], size[2]) != (p["width"], p["depth"]):
+            raise RuntimeError(f"Structure dimensions differ from canonical theme: {p['style']}")
     return hashlib.sha256(archive.read_bytes()).hexdigest()
+
+
+def sanitize_entity_region(raw: bytes, player_arrays: set[tuple[int, ...]], identities: set[str]) -> tuple[bytes, int, int]:
+    """Compact chunks, anonymize gossip and omit transient construction debris."""
+    header = bytearray(8192)
+    header[4096:8192] = raw[4096:8192]
+    body = bytearray()
+    removed = 0
+    removed_debris = 0
+
+    def scrub(node: object) -> None:
+        nonlocal removed
+        if isinstance(node, dict):
+            for key, value in node.items():
+                if key == "Gossips":
+                    retained = []
+                    for row in value:
+                        target = row.get("Target")
+                        private = ((isinstance(target, nbtlib.IntArray) and tuple(map(int, target)) in player_arrays)
+                                   or (isinstance(target, nbtlib.String) and str(target) in identities))
+                        if private:
+                            removed += 1
+                        else:
+                            retained.append(row)
+                    node[key] = nbtlib.List[nbtlib.Compound](retained)
+                else:
+                    scrub(value)
+        elif isinstance(node, list):
+            for value in node:
+                scrub(value)
+
+    for index in range(1024):
+        offset = int.from_bytes(raw[index * 4:index * 4 + 3], "big") * 4096
+        if not offset:
+            continue
+        size = int.from_bytes(raw[offset:offset + 4], "big")
+        kind = raw[offset + 4]
+        payload = raw[offset + 5:offset + 4 + size]
+        if kind == 1:
+            payload = gzip.decompress(payload)
+        elif kind == 2:
+            payload = zlib.decompress(payload)
+        elif kind != 3:
+            raise ValueError(f"Unsupported entity chunk compression: {kind}")
+        tree = nbtlib.File.parse(io.BytesIO(payload))
+        if "Entities" in tree:
+            retained = [entity for entity in tree["Entities"]
+                        if str(entity.get("id")) not in {"minecraft:item", "minecraft:experience_orb"}]
+            removed_debris += len(tree["Entities"]) - len(retained)
+            tree["Entities"] = nbtlib.List[nbtlib.Compound](retained)
+        scrub(tree)
+        stream = io.BytesIO()
+        tree.write(stream)
+        compressed = zlib.compress(stream.getvalue(), 9)
+        chunk = (len(compressed) + 1).to_bytes(4, "big") + b"\x02" + compressed
+        sectors = (len(chunk) + 4095) // 4096
+        location = 2 + len(body) // 4096
+        header[index * 4:index * 4 + 4] = location.to_bytes(3, "big") + bytes([sectors])
+        body.extend(chunk)
+        body.extend(bytes(sectors * 4096 - len(chunk)))
+    return bytes(header + body), removed, removed_debris
+
+
+def export_map(world: Path, destination: Path) -> dict:
+    """Export map content without the builder's identity or personal game files."""
+    if world.name != WORLD or not (world / "level.dat").is_file():
+        raise ValueError("Expected the dedicated Karak_Tea_Showcase world")
+    identities = {"KarakShowcase"}
+    identities.update(p.stem for p in (world / "players").rglob("*.dat"))
+    player_arrays = set()
+    for identity in identities:
+        try:
+            player_arrays.add(struct.unpack(">iiii", uuid.UUID(identity).bytes))
+        except ValueError:
+            pass
+    excluded = []
+    removed_gossip = 0
+    removed_debris = 0
+    mod_file = world.parent.parent / "horizon-mods/Karak_Tea_0.1.0.hmod"
+    mod_pin = ("Matching .hmod SHA-256: " + hashlib.sha256(mod_file.read_bytes()).hexdigest() + "\n"
+               if mod_file.is_file() else "")
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    with zipfile.ZipFile(destination, "w", zipfile.ZIP_DEFLATED) as output:
+        for path in sorted(world.rglob("*")):
+            if not path.is_file():
+                continue
+            relative = path.relative_to(world)
+            if (relative.parts[0] in {"players", "playerdata", "advancements", "stats", "logs"}
+                    or path.name == "session.lock" or path.name.endswith(".dat_old")):
+                excluded.append(relative.as_posix())
+                continue
+            data = path.read_bytes()
+            if "entities" in relative.parts and path.suffix == ".mca":
+                data, count, debris = sanitize_entity_region(data, player_arrays, identities)
+                removed_gossip += count
+                removed_debris += debris
+            if relative.as_posix() in {"level.dat", "data/minecraft/scoreboard.dat"}:
+                tree = nbtlib.load(path)
+                if relative.as_posix() == "level.dat":
+                    for key in ["singleplayer_uuid", "Player"]:
+                        tree["Data"].pop(key, None)
+                else:
+                    scores = tree["data"].get("PlayerScores", [])
+                    tree["data"]["PlayerScores"] = nbtlib.List[nbtlib.Compound](
+                        row for row in scores if str(row.get("Name", "")) not in identities)
+                raw = io.BytesIO()
+                tree.write(raw)
+                data = gzip.compress(raw.getvalue(), mtime=0)
+            info = zipfile.ZipInfo(f"{WORLD}/{relative.as_posix()}", (2026, 11, 7, 0, 0, 0))
+            info.compress_type = zipfile.ZIP_DEFLATED
+            output.writestr(info, data)
+        readme_info = zipfile.ZipInfo("README.txt", (2026, 11, 7, 0, 0, 0))
+        readme_info.compress_type = zipfile.ZIP_DEFLATED
+        output.writestr(readme_info, "Karak Tea five-house showcase\n\n"
+                        "Requires Horizon revision 66f3981, Karak Tea 0.2.0 and its native extension.\n"
+                        "Install and enable the matching .hmod and native client before opening this world.\n" + mod_pin +
+                        "Put the Karak_Tea_Showcase folder into the chosen instance's saves folder.\n"
+                        "Spawn: 6 65 -5. Five shops share the paved boulevard to the south.\n"
+                        "Emerald and milk/bread supply chests are labeled at spawn.\n"
+                        "Survival, peaceful, daylight and weather frozen.\n"
+                        "No private player data or game installation assets are included.\n")
+    return {"file": str(destination), "sha256": hashlib.sha256(destination.read_bytes()).hexdigest(),
+            "excluded": excluded, "builder_gossip_rows_removed": removed_gossip,
+            "construction_debris_entities_removed": removed_debris}
 
 
 def main() -> None:
@@ -91,13 +254,21 @@ def main() -> None:
     parser.add_argument("--apply", action="store_true")
     parser.add_argument("--ctl", type=Path)
     parser.add_argument("--socket")
-    parser.add_argument("--archive", type=Path, default=ROOT / "dist/Karak_Tea_0.1.0.hmod")
+    parser.add_argument("--archive", type=Path, default=ROOT / f"dist/Karak_Tea_{VERSION}.hmod")
     parser.add_argument("--expected-sha256", help="Use an explicitly pinned immutable integration snapshot")
     parser.add_argument("--evidence", type=Path, default=ROOT / "evidence/private/showcase")
+    parser.add_argument("--export-world", type=Path)
+    parser.add_argument("--export-zip", type=Path)
     args = parser.parse_args()
-    commands = plan()
+    if args.export_world or args.export_zip:
+        if not args.export_world or not args.export_zip or args.apply:
+            parser.error("Use --export-world and --export-zip together, without --apply")
+        print(json.dumps(export_map(args.export_world, args.export_zip), indent=2))
+        return
+    plots = plots_from_structures(args.archive) if args.apply else PLOTS
+    commands = plan(plots)
     if not args.apply:
-        print(json.dumps({"world": WORLD, "spawn": SPAWN, "plots": PLOTS, "commands": commands}, indent=2))
+        print(json.dumps({"world": WORLD, "spawn": SPAWN, "plots": plots, "commands": commands}, indent=2))
         return
     if not args.ctl or not args.socket or "showcase" not in args.socket:
         parser.error("--apply requires --ctl and a dedicated socket containing 'showcase'")
@@ -123,7 +294,7 @@ def main() -> None:
     initial = ctl("state")
     if WORLD not in json.dumps(initial):
         raise RuntimeError("Refusing to alter a world other than Karak_Tea_Showcase")
-    receipt = {"world": WORLD, "archive_sha256": digest, "spawn": SPAWN, "plots": PLOTS,
+    receipt = {"world": WORLD, "archive_sha256": digest, "spawn": SPAWN, "plots": plots,
                "initial": initial, "commands": [], "checks": {}}
     try:
         ctl("command", "tp @s 6.5 85 8")
@@ -140,12 +311,17 @@ def main() -> None:
         for _ in range(12):
             ctl("container", 9, 65, -7, "milk_bucket", 1)
         ctl("container", 9, 65, -7, "bread", 64)
-        for p in PLOTS:
-            mid = p["x"] + p["width"] // 2
+        # Replacing an older showcase chest can drop its previous contents.
+        ctl("command", "kill @e[type=item,x=-46,y=61,z=-14,dx=106,dy=17,dz=54]")
+        ctl("command", "kill @e[type=experience_orb,x=-46,y=61,z=-14,dx=106,dy=17,dz=54]")
+        for p in plots:
+            door = p["doors"][0]
+            lectern = p["lectern"]
+            jx, jy, jz = p["connector"]
             receipt["checks"][p["style"]] = {
-                "door": ctl("block", mid, 65, 17),
-                "lectern": ctl("block", mid, 65, 21),
-                "entry_floor": ctl("block", mid, 64, 12)}
+                "door": ctl("block", p["x"]+door[0], p["base_y"]+door[1], p["z"]+door[2]),
+                "lectern": ctl("block", p["x"]+lectern[0], p["base_y"]+lectern[1], p["z"]+lectern[2]),
+                "entry_floor": ctl("block", p["x"]+jx, p["base_y"]+jy, p["z"]+jz)}
         receipt["checks"]["entities"] = ctl("entities", 100, "villager")
         receipt["checks"]["emeralds"] = ctl("container", 3, 65, -7)
         receipt["checks"]["milk"] = ctl("container", 9, 65, -7)

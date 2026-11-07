@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "consume": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "karak_house:decaf_karak"
+          ]
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "karak_house:powers/start_decaf"
+  }
+}

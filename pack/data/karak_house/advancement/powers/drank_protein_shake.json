@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "consume": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "karak_house:karak_protein_shake"
+          ]
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "karak_house:powers/start_protein_shake"
+  }
+}

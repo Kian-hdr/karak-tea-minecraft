@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "consume": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "karak_house:iced_karak"
+          ]
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "karak_house:powers/start_iced"
+  }
+}

@@ -4,68 +4,29 @@
   "components": {
     "minecraft:item_name": "Karak Tea",
     "minecraft:item_model": "karak_house:karak_tea",
+    "minecraft:lore": [
+      {
+        "text": "5 minutes: Strength IV, Speed III, Jump Boost III.",
+        "color": "gray",
+        "italic": false
+      },
+      {
+        "text": "Resistance II, Regeneration I, Fire Resistance; no fall damage.",
+        "color": "gray",
+        "italic": false
+      },
+      {
+        "text": "Stacks with different Karak drinks; same drink refreshes its timer.",
+        "color": "gray",
+        "italic": false
+      }
+    ],
     "minecraft:consumable": {
       "consume_seconds": 1.6,
       "animation": "drink",
       "sound": "minecraft:entity.generic.drink",
       "has_consume_particles": false,
-      "on_consume_effects": [
-        {
-          "type": "minecraft:apply_effects",
-          "effects": [
-            {
-              "id": "minecraft:strength",
-              "amplifier": 3,
-              "duration": 6000,
-              "show_particles": true,
-              "show_icon": true
-            },
-            {
-              "id": "minecraft:speed",
-              "amplifier": 2,
-              "duration": 6000,
-              "show_particles": true,
-              "show_icon": true
-            },
-            {
-              "id": "minecraft:jump_boost",
-              "amplifier": 2,
-              "duration": 6000,
-              "show_particles": true,
-              "show_icon": true
-            },
-            {
-              "id": "minecraft:resistance",
-              "amplifier": 1,
-              "duration": 6000,
-              "show_particles": true,
-              "show_icon": true
-            },
-            {
-              "id": "minecraft:regeneration",
-              "amplifier": 0,
-              "duration": 6000,
-              "show_particles": true,
-              "show_icon": true
-            },
-            {
-              "id": "minecraft:fire_resistance",
-              "amplifier": 0,
-              "duration": 6000,
-              "show_particles": true,
-              "show_icon": true
-            },
-            {
-              "id": "minecraft:slow_falling",
-              "amplifier": 0,
-              "duration": 6000,
-              "show_particles": true,
-              "show_icon": true
-            }
-          ],
-          "probability": 1.0
-        }
-      ]
+      "on_consume_effects": []
     },
     "!minecraft:potion_contents": {},
     "!minecraft:use_remainder": {}

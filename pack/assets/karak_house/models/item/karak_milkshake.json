@@ -1,0 +1,4156 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "glass": "minecraft:block/white_stained_glass",
+    "tea": "minecraft:block/white_terracotta",
+    "surface": "minecraft:block/quartz_block_bottom",
+    "sleeve": "minecraft:block/pink_terracotta",
+    "label": "minecraft:block/quartz_block_bottom",
+    "trim": "minecraft:block/iron_block",
+    "particle": "minecraft:block/orange_terracotta"
+  },
+  "elements": [
+    {
+      "name": "caramel_tea",
+      "from": [
+        4.4,
+        1.65,
+        4.4
+      ],
+      "to": [
+        11.6,
+        9.8,
+        11.6
+      ],
+      "faces": {
+        "north": {
+          "texture": "#tea"
+        },
+        "south": {
+          "texture": "#tea"
+        },
+        "east": {
+          "texture": "#tea"
+        },
+        "west": {
+          "texture": "#tea"
+        },
+        "up": {
+          "texture": "#tea"
+        },
+        "down": {
+          "texture": "#tea"
+        }
+      }
+    },
+    {
+      "name": "tea_surface",
+      "from": [
+        4.4,
+        9.8,
+        4.4
+      ],
+      "to": [
+        11.6,
+        9.95,
+        11.6
+      ],
+      "faces": {
+        "north": {
+          "texture": "#surface"
+        },
+        "south": {
+          "texture": "#surface"
+        },
+        "east": {
+          "texture": "#surface"
+        },
+        "west": {
+          "texture": "#surface"
+        },
+        "up": {
+          "texture": "#surface"
+        },
+        "down": {
+          "texture": "#surface"
+        }
+      }
+    },
+    {
+      "name": "glass_base",
+      "from": [
+        4,
+        1,
+        4
+      ],
+      "to": [
+        12,
+        1.6,
+        12
+      ],
+      "faces": {
+        "north": {
+          "texture": "#glass"
+        },
+        "south": {
+          "texture": "#glass"
+        },
+        "east": {
+          "texture": "#glass"
+        },
+        "west": {
+          "texture": "#glass"
+        },
+        "up": {
+          "texture": "#glass"
+        },
+        "down": {
+          "texture": "#glass"
+        }
+      }
+    },
+    {
+      "name": "glass_left",
+      "from": [
+        4,
+        1.6,
+        4
+      ],
+      "to": [
+        4.55,
+        10.8,
+        12
+      ],
+      "faces": {
+        "north": {
+          "texture": "#glass"
+        },
+        "south": {
+          "texture": "#glass"
+        },
+        "east": {
+          "texture": "#glass"
+        },
+        "west": {
+          "texture": "#glass"
+        },
+        "up": {
+          "texture": "#glass"
+        },
+        "down": {
+          "texture": "#glass"
+        }
+      }
+    },
+    {
+      "name": "glass_right",
+      "from": [
+        11.45,
+        1.6,
+        4
+      ],
+      "to": [
+        12,
+        10.8,
+        12
+      ],
+      "faces": {
+        "north": {
+          "texture": "#glass"
+        },
+        "south": {
+          "texture": "#glass"
+        },
+        "east": {
+          "texture": "#glass"
+        },
+        "west": {
+          "texture": "#glass"
+        },
+        "up": {
+          "texture": "#glass"
+        },
+        "down": {
+          "texture": "#glass"
+        }
+      }
+    },
+    {
+      "name": "glass_front",
+      "from": [
+        4.55,
+        1.6,
+        4
+      ],
+      "to": [
+        11.45,
+        10.8,
+        4.55
+      ],
+      "faces": {
+        "north": {
+          "texture": "#glass"
+        },
+        "south": {
+          "texture": "#glass"
+        },
+        "east": {
+          "texture": "#glass"
+        },
+        "west": {
+          "texture": "#glass"
+        },
+        "up": {
+          "texture": "#glass"
+        },
+        "down": {
+          "texture": "#glass"
+        }
+      }
+    },
+    {
+      "name": "glass_back",
+      "from": [
+        4.55,
+        1.6,
+        11.45
+      ],
+      "to": [
+        11.45,
+        10.8,
+        12
+      ],
+      "faces": {
+        "north": {
+          "texture": "#glass"
+        },
+        "south": {
+          "texture": "#glass"
+        },
+        "east": {
+          "texture": "#glass"
+        },
+        "west": {
+          "texture": "#glass"
+        },
+        "up": {
+          "texture": "#glass"
+        },
+        "down": {
+          "texture": "#glass"
+        }
+      }
+    },
+    {
+      "name": "rim_left",
+      "from": [
+        3.8,
+        10.3,
+        3.8
+      ],
+      "to": [
+        4.45,
+        11.15,
+        12.2
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        },
+        "south": {
+          "texture": "#label"
+        },
+        "east": {
+          "texture": "#label"
+        },
+        "west": {
+          "texture": "#label"
+        },
+        "up": {
+          "texture": "#label"
+        },
+        "down": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "rim_right",
+      "from": [
+        11.55,
+        10.3,
+        3.8
+      ],
+      "to": [
+        12.2,
+        11.15,
+        12.2
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        },
+        "south": {
+          "texture": "#label"
+        },
+        "east": {
+          "texture": "#label"
+        },
+        "west": {
+          "texture": "#label"
+        },
+        "up": {
+          "texture": "#label"
+        },
+        "down": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "rim_front",
+      "from": [
+        4.45,
+        10.3,
+        3.8
+      ],
+      "to": [
+        11.55,
+        11.15,
+        4.45
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        },
+        "south": {
+          "texture": "#label"
+        },
+        "east": {
+          "texture": "#label"
+        },
+        "west": {
+          "texture": "#label"
+        },
+        "up": {
+          "texture": "#label"
+        },
+        "down": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "rim_back",
+      "from": [
+        4.45,
+        10.3,
+        11.55
+      ],
+      "to": [
+        11.55,
+        11.15,
+        12.2
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        },
+        "south": {
+          "texture": "#label"
+        },
+        "east": {
+          "texture": "#label"
+        },
+        "west": {
+          "texture": "#label"
+        },
+        "up": {
+          "texture": "#label"
+        },
+        "down": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "glass_highlight_upper",
+      "from": [
+        4.65,
+        8.45,
+        3.98
+      ],
+      "to": [
+        4.95,
+        9.9,
+        4.04
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "glass_highlight_lower",
+      "from": [
+        4.65,
+        2.0,
+        3.98
+      ],
+      "to": [
+        4.95,
+        3.5,
+        4.04
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "sleeve_front",
+      "from": [
+        3.85,
+        4.0,
+        3.85
+      ],
+      "to": [
+        12.15,
+        8.15,
+        4.0
+      ],
+      "faces": {
+        "north": {
+          "texture": "#sleeve"
+        },
+        "south": {
+          "texture": "#sleeve"
+        },
+        "east": {
+          "texture": "#sleeve"
+        },
+        "west": {
+          "texture": "#sleeve"
+        },
+        "up": {
+          "texture": "#sleeve"
+        },
+        "down": {
+          "texture": "#sleeve"
+        }
+      }
+    },
+    {
+      "name": "sleeve_back",
+      "from": [
+        3.85,
+        4.0,
+        12.0
+      ],
+      "to": [
+        12.15,
+        8.15,
+        12.15
+      ],
+      "faces": {
+        "north": {
+          "texture": "#sleeve"
+        },
+        "south": {
+          "texture": "#sleeve"
+        },
+        "east": {
+          "texture": "#sleeve"
+        },
+        "west": {
+          "texture": "#sleeve"
+        },
+        "up": {
+          "texture": "#sleeve"
+        },
+        "down": {
+          "texture": "#sleeve"
+        }
+      }
+    },
+    {
+      "name": "sleeve_left",
+      "from": [
+        3.85,
+        4.0,
+        4.0
+      ],
+      "to": [
+        4.0,
+        8.15,
+        12.0
+      ],
+      "faces": {
+        "north": {
+          "texture": "#sleeve"
+        },
+        "south": {
+          "texture": "#sleeve"
+        },
+        "east": {
+          "texture": "#sleeve"
+        },
+        "west": {
+          "texture": "#sleeve"
+        },
+        "up": {
+          "texture": "#sleeve"
+        },
+        "down": {
+          "texture": "#sleeve"
+        }
+      }
+    },
+    {
+      "name": "sleeve_right",
+      "from": [
+        12.0,
+        4.0,
+        4.0
+      ],
+      "to": [
+        12.15,
+        8.15,
+        12.0
+      ],
+      "faces": {
+        "north": {
+          "texture": "#sleeve"
+        },
+        "south": {
+          "texture": "#sleeve"
+        },
+        "east": {
+          "texture": "#sleeve"
+        },
+        "west": {
+          "texture": "#sleeve"
+        },
+        "up": {
+          "texture": "#sleeve"
+        },
+        "down": {
+          "texture": "#sleeve"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_0_0_0_front",
+      "from": [
+        9.870000000000001,
+        7.23,
+        3.8
+      ],
+      "to": [
+        10.09,
+        7.45,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_0_0_0_back",
+      "from": [
+        5.91,
+        7.23,
+        12.17
+      ],
+      "to": [
+        6.13,
+        7.45,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_0_0_2_front",
+      "from": [
+        9.43,
+        7.23,
+        3.8
+      ],
+      "to": [
+        9.649999999999999,
+        7.45,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_0_0_2_back",
+      "from": [
+        6.3500000000000005,
+        7.23,
+        12.17
+      ],
+      "to": [
+        6.57,
+        7.45,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_0_1_0_front",
+      "from": [
+        9.649999999999999,
+        7.01,
+        3.8
+      ],
+      "to": [
+        10.09,
+        7.23,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_0_1_0_back",
+      "from": [
+        5.91,
+        7.01,
+        12.17
+      ],
+      "to": [
+        6.3500000000000005,
+        7.23,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_0_2_0_front",
+      "from": [
+        9.870000000000001,
+        6.79,
+        3.8
+      ],
+      "to": [
+        10.09,
+        7.01,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_0_2_0_back",
+      "from": [
+        5.91,
+        6.79,
+        12.17
+      ],
+      "to": [
+        6.13,
+        7.01,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_0_3_0_front",
+      "from": [
+        9.649999999999999,
+        6.57,
+        3.8
+      ],
+      "to": [
+        10.09,
+        6.79,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_0_3_0_back",
+      "from": [
+        5.91,
+        6.57,
+        12.17
+      ],
+      "to": [
+        6.3500000000000005,
+        6.79,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_0_4_0_front",
+      "from": [
+        9.870000000000001,
+        6.35,
+        3.8
+      ],
+      "to": [
+        10.09,
+        6.57,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_0_4_0_back",
+      "from": [
+        5.91,
+        6.35,
+        12.17
+      ],
+      "to": [
+        6.13,
+        6.57,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_0_4_2_front",
+      "from": [
+        9.43,
+        6.35,
+        3.8
+      ],
+      "to": [
+        9.649999999999999,
+        6.57,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_0_4_2_back",
+      "from": [
+        6.3500000000000005,
+        6.35,
+        12.17
+      ],
+      "to": [
+        6.57,
+        6.57,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_0_1_front",
+      "from": [
+        8.77,
+        7.23,
+        3.8
+      ],
+      "to": [
+        8.99,
+        7.45,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_0_1_back",
+      "from": [
+        7.01,
+        7.23,
+        12.17
+      ],
+      "to": [
+        7.23,
+        7.45,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_1_0_front",
+      "from": [
+        8.99,
+        7.01,
+        3.8
+      ],
+      "to": [
+        9.21,
+        7.23,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_1_0_back",
+      "from": [
+        6.79,
+        7.01,
+        12.17
+      ],
+      "to": [
+        7.01,
+        7.23,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_1_2_front",
+      "from": [
+        8.55,
+        7.01,
+        3.8
+      ],
+      "to": [
+        8.77,
+        7.23,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_1_2_back",
+      "from": [
+        7.23,
+        7.01,
+        12.17
+      ],
+      "to": [
+        7.45,
+        7.23,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_2_0_front",
+      "from": [
+        8.55,
+        6.79,
+        3.8
+      ],
+      "to": [
+        9.21,
+        7.01,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_2_0_back",
+      "from": [
+        6.79,
+        6.79,
+        12.17
+      ],
+      "to": [
+        7.45,
+        7.01,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_3_0_front",
+      "from": [
+        8.99,
+        6.57,
+        3.8
+      ],
+      "to": [
+        9.21,
+        6.79,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_3_0_back",
+      "from": [
+        6.79,
+        6.57,
+        12.17
+      ],
+      "to": [
+        7.01,
+        6.79,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_3_2_front",
+      "from": [
+        8.55,
+        6.57,
+        3.8
+      ],
+      "to": [
+        8.77,
+        6.79,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_3_2_back",
+      "from": [
+        7.23,
+        6.57,
+        12.17
+      ],
+      "to": [
+        7.45,
+        6.79,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_4_0_front",
+      "from": [
+        8.99,
+        6.35,
+        3.8
+      ],
+      "to": [
+        9.21,
+        6.57,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_4_0_back",
+      "from": [
+        6.79,
+        6.35,
+        12.17
+      ],
+      "to": [
+        7.01,
+        6.57,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_4_2_front",
+      "from": [
+        8.55,
+        6.35,
+        3.8
+      ],
+      "to": [
+        8.77,
+        6.57,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_1_4_2_back",
+      "from": [
+        7.23,
+        6.35,
+        12.17
+      ],
+      "to": [
+        7.45,
+        6.57,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_0_0_front",
+      "from": [
+        7.890000000000001,
+        7.23,
+        3.8
+      ],
+      "to": [
+        8.33,
+        7.45,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_0_0_back",
+      "from": [
+        7.67,
+        7.23,
+        12.17
+      ],
+      "to": [
+        8.11,
+        7.45,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_1_0_front",
+      "from": [
+        8.11,
+        7.01,
+        3.8
+      ],
+      "to": [
+        8.33,
+        7.23,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_1_0_back",
+      "from": [
+        7.67,
+        7.01,
+        12.17
+      ],
+      "to": [
+        7.890000000000001,
+        7.23,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_1_2_front",
+      "from": [
+        7.67,
+        7.01,
+        3.8
+      ],
+      "to": [
+        7.890000000000001,
+        7.23,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_1_2_back",
+      "from": [
+        8.11,
+        7.01,
+        12.17
+      ],
+      "to": [
+        8.33,
+        7.23,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_2_0_front",
+      "from": [
+        7.890000000000001,
+        6.79,
+        3.8
+      ],
+      "to": [
+        8.33,
+        7.01,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_2_0_back",
+      "from": [
+        7.67,
+        6.79,
+        12.17
+      ],
+      "to": [
+        8.11,
+        7.01,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_3_0_front",
+      "from": [
+        8.11,
+        6.57,
+        3.8
+      ],
+      "to": [
+        8.33,
+        6.79,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_3_0_back",
+      "from": [
+        7.67,
+        6.57,
+        12.17
+      ],
+      "to": [
+        7.890000000000001,
+        6.79,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_3_2_front",
+      "from": [
+        7.67,
+        6.57,
+        3.8
+      ],
+      "to": [
+        7.890000000000001,
+        6.79,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_3_2_back",
+      "from": [
+        8.11,
+        6.57,
+        12.17
+      ],
+      "to": [
+        8.33,
+        6.79,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_4_0_front",
+      "from": [
+        8.11,
+        6.35,
+        3.8
+      ],
+      "to": [
+        8.33,
+        6.57,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_4_0_back",
+      "from": [
+        7.67,
+        6.35,
+        12.17
+      ],
+      "to": [
+        7.890000000000001,
+        6.57,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_4_2_front",
+      "from": [
+        7.67,
+        6.35,
+        3.8
+      ],
+      "to": [
+        7.890000000000001,
+        6.57,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_2_4_2_back",
+      "from": [
+        8.11,
+        6.35,
+        12.17
+      ],
+      "to": [
+        8.33,
+        6.57,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_0_1_front",
+      "from": [
+        7.01,
+        7.23,
+        3.8
+      ],
+      "to": [
+        7.23,
+        7.45,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_0_1_back",
+      "from": [
+        8.77,
+        7.23,
+        12.17
+      ],
+      "to": [
+        8.99,
+        7.45,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_1_0_front",
+      "from": [
+        7.23,
+        7.01,
+        3.8
+      ],
+      "to": [
+        7.449999999999999,
+        7.23,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_1_0_back",
+      "from": [
+        8.55,
+        7.01,
+        12.17
+      ],
+      "to": [
+        8.77,
+        7.23,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_1_2_front",
+      "from": [
+        6.789999999999999,
+        7.01,
+        3.8
+      ],
+      "to": [
+        7.01,
+        7.23,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_1_2_back",
+      "from": [
+        8.99,
+        7.01,
+        12.17
+      ],
+      "to": [
+        9.21,
+        7.23,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_2_0_front",
+      "from": [
+        6.789999999999999,
+        6.79,
+        3.8
+      ],
+      "to": [
+        7.449999999999999,
+        7.01,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_2_0_back",
+      "from": [
+        8.55,
+        6.79,
+        12.17
+      ],
+      "to": [
+        9.21,
+        7.01,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_3_0_front",
+      "from": [
+        7.23,
+        6.57,
+        3.8
+      ],
+      "to": [
+        7.449999999999999,
+        6.79,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_3_0_back",
+      "from": [
+        8.55,
+        6.57,
+        12.17
+      ],
+      "to": [
+        8.77,
+        6.79,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_3_2_front",
+      "from": [
+        6.789999999999999,
+        6.57,
+        3.8
+      ],
+      "to": [
+        7.01,
+        6.79,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_3_2_back",
+      "from": [
+        8.99,
+        6.57,
+        12.17
+      ],
+      "to": [
+        9.21,
+        6.79,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_4_0_front",
+      "from": [
+        7.23,
+        6.35,
+        3.8
+      ],
+      "to": [
+        7.449999999999999,
+        6.57,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_4_0_back",
+      "from": [
+        8.55,
+        6.35,
+        12.17
+      ],
+      "to": [
+        8.77,
+        6.57,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_4_2_front",
+      "from": [
+        6.789999999999999,
+        6.35,
+        3.8
+      ],
+      "to": [
+        7.01,
+        6.57,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_3_4_2_back",
+      "from": [
+        8.99,
+        6.35,
+        12.17
+      ],
+      "to": [
+        9.21,
+        6.57,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_4_0_0_front",
+      "from": [
+        6.35,
+        7.23,
+        3.8
+      ],
+      "to": [
+        6.57,
+        7.45,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_4_0_0_back",
+      "from": [
+        9.43,
+        7.23,
+        12.17
+      ],
+      "to": [
+        9.65,
+        7.45,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_4_0_2_front",
+      "from": [
+        5.91,
+        7.23,
+        3.8
+      ],
+      "to": [
+        6.129999999999999,
+        7.45,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_4_0_2_back",
+      "from": [
+        9.870000000000001,
+        7.23,
+        12.17
+      ],
+      "to": [
+        10.09,
+        7.45,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_4_1_0_front",
+      "from": [
+        6.129999999999999,
+        7.01,
+        3.8
+      ],
+      "to": [
+        6.57,
+        7.23,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_4_1_0_back",
+      "from": [
+        9.43,
+        7.01,
+        12.17
+      ],
+      "to": [
+        9.870000000000001,
+        7.23,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_4_2_0_front",
+      "from": [
+        6.35,
+        6.79,
+        3.8
+      ],
+      "to": [
+        6.57,
+        7.01,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_4_2_0_back",
+      "from": [
+        9.43,
+        6.79,
+        12.17
+      ],
+      "to": [
+        9.65,
+        7.01,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_4_3_0_front",
+      "from": [
+        6.129999999999999,
+        6.57,
+        3.8
+      ],
+      "to": [
+        6.57,
+        6.79,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_4_3_0_back",
+      "from": [
+        9.43,
+        6.57,
+        12.17
+      ],
+      "to": [
+        9.870000000000001,
+        6.79,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_4_4_0_front",
+      "from": [
+        6.35,
+        6.35,
+        3.8
+      ],
+      "to": [
+        6.57,
+        6.57,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_4_4_0_back",
+      "from": [
+        9.43,
+        6.35,
+        12.17
+      ],
+      "to": [
+        9.65,
+        6.57,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_4_4_2_front",
+      "from": [
+        5.91,
+        6.35,
+        3.8
+      ],
+      "to": [
+        6.129999999999999,
+        6.57,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_KARAK_4_4_2_back",
+      "from": [
+        9.870000000000001,
+        6.35,
+        12.17
+      ],
+      "to": [
+        10.09,
+        6.57,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_0_0_0_front",
+      "from": [
+        11.347142857142856,
+        5.647142857142857,
+        3.8
+      ],
+      "to": [
+        11.55,
+        5.85,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_0_0_0_back",
+      "from": [
+        4.45,
+        5.647142857142857,
+        12.17
+      ],
+      "to": [
+        4.652857142857143,
+        5.85,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_0_0_2_front",
+      "from": [
+        10.94142857142857,
+        5.647142857142857,
+        3.8
+      ],
+      "to": [
+        11.144285714285715,
+        5.85,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_0_0_2_back",
+      "from": [
+        4.855714285714286,
+        5.647142857142857,
+        12.17
+      ],
+      "to": [
+        5.058571428571429,
+        5.85,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_0_1_0_front",
+      "from": [
+        10.94142857142857,
+        5.444285714285714,
+        3.8
+      ],
+      "to": [
+        11.55,
+        5.647142857142857,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_0_1_0_back",
+      "from": [
+        4.45,
+        5.444285714285714,
+        12.17
+      ],
+      "to": [
+        5.058571428571429,
+        5.647142857142857,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_0_2_0_front",
+      "from": [
+        10.94142857142857,
+        5.241428571428571,
+        3.8
+      ],
+      "to": [
+        11.55,
+        5.444285714285714,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_0_2_0_back",
+      "from": [
+        4.45,
+        5.241428571428571,
+        12.17
+      ],
+      "to": [
+        5.058571428571429,
+        5.444285714285714,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_0_3_0_front",
+      "from": [
+        11.347142857142856,
+        5.038571428571428,
+        3.8
+      ],
+      "to": [
+        11.55,
+        5.241428571428571,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_0_3_0_back",
+      "from": [
+        4.45,
+        5.038571428571428,
+        12.17
+      ],
+      "to": [
+        4.652857142857143,
+        5.241428571428571,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_0_3_2_front",
+      "from": [
+        10.94142857142857,
+        5.038571428571428,
+        3.8
+      ],
+      "to": [
+        11.144285714285715,
+        5.241428571428571,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_0_3_2_back",
+      "from": [
+        4.855714285714286,
+        5.038571428571428,
+        12.17
+      ],
+      "to": [
+        5.058571428571429,
+        5.241428571428571,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_0_4_0_front",
+      "from": [
+        11.347142857142856,
+        4.835714285714285,
+        3.8
+      ],
+      "to": [
+        11.55,
+        5.038571428571428,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_0_4_0_back",
+      "from": [
+        4.45,
+        4.835714285714285,
+        12.17
+      ],
+      "to": [
+        4.652857142857143,
+        5.038571428571428,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_0_4_2_front",
+      "from": [
+        10.94142857142857,
+        4.835714285714285,
+        3.8
+      ],
+      "to": [
+        11.144285714285715,
+        5.038571428571428,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_0_4_2_back",
+      "from": [
+        4.855714285714286,
+        4.835714285714285,
+        12.17
+      ],
+      "to": [
+        5.058571428571429,
+        5.038571428571428,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_1_0_0_front",
+      "from": [
+        10.129999999999999,
+        5.647142857142857,
+        3.8
+      ],
+      "to": [
+        10.73857142857143,
+        5.85,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_1_0_0_back",
+      "from": [
+        5.261428571428572,
+        5.647142857142857,
+        12.17
+      ],
+      "to": [
+        5.87,
+        5.85,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_1_1_1_front",
+      "from": [
+        10.332857142857144,
+        5.444285714285714,
+        3.8
+      ],
+      "to": [
+        10.535714285714285,
+        5.647142857142857,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_1_1_1_back",
+      "from": [
+        5.464285714285714,
+        5.444285714285714,
+        12.17
+      ],
+      "to": [
+        5.667142857142857,
+        5.647142857142857,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_1_2_1_front",
+      "from": [
+        10.332857142857144,
+        5.241428571428571,
+        3.8
+      ],
+      "to": [
+        10.535714285714285,
+        5.444285714285714,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_1_2_1_back",
+      "from": [
+        5.464285714285714,
+        5.241428571428571,
+        12.17
+      ],
+      "to": [
+        5.667142857142857,
+        5.444285714285714,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_1_3_1_front",
+      "from": [
+        10.332857142857144,
+        5.038571428571428,
+        3.8
+      ],
+      "to": [
+        10.535714285714285,
+        5.241428571428571,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_1_3_1_back",
+      "from": [
+        5.464285714285714,
+        5.038571428571428,
+        12.17
+      ],
+      "to": [
+        5.667142857142857,
+        5.241428571428571,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_1_4_0_front",
+      "from": [
+        10.129999999999999,
+        4.835714285714285,
+        3.8
+      ],
+      "to": [
+        10.73857142857143,
+        5.038571428571428,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_1_4_0_back",
+      "from": [
+        5.261428571428572,
+        4.835714285714285,
+        12.17
+      ],
+      "to": [
+        5.87,
+        5.038571428571428,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_2_0_0_front",
+      "from": [
+        9.724285714285713,
+        5.647142857142857,
+        3.8
+      ],
+      "to": [
+        9.927142857142858,
+        5.85,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_2_0_0_back",
+      "from": [
+        6.072857142857143,
+        5.647142857142857,
+        12.17
+      ],
+      "to": [
+        6.275714285714286,
+        5.85,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_2_1_0_front",
+      "from": [
+        9.724285714285713,
+        5.444285714285714,
+        3.8
+      ],
+      "to": [
+        9.927142857142858,
+        5.647142857142857,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_2_1_0_back",
+      "from": [
+        6.072857142857143,
+        5.444285714285714,
+        12.17
+      ],
+      "to": [
+        6.275714285714286,
+        5.647142857142857,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_2_2_0_front",
+      "from": [
+        9.724285714285713,
+        5.241428571428571,
+        3.8
+      ],
+      "to": [
+        9.927142857142858,
+        5.444285714285714,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_2_2_0_back",
+      "from": [
+        6.072857142857143,
+        5.241428571428571,
+        12.17
+      ],
+      "to": [
+        6.275714285714286,
+        5.444285714285714,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_2_3_0_front",
+      "from": [
+        9.724285714285713,
+        5.038571428571428,
+        3.8
+      ],
+      "to": [
+        9.927142857142858,
+        5.241428571428571,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_2_3_0_back",
+      "from": [
+        6.072857142857143,
+        5.038571428571428,
+        12.17
+      ],
+      "to": [
+        6.275714285714286,
+        5.241428571428571,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_2_4_0_front",
+      "from": [
+        9.318571428571428,
+        4.835714285714285,
+        3.8
+      ],
+      "to": [
+        9.927142857142858,
+        5.038571428571428,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_2_4_0_back",
+      "from": [
+        6.072857142857143,
+        4.835714285714285,
+        12.17
+      ],
+      "to": [
+        6.6814285714285715,
+        5.038571428571428,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_3_0_0_front",
+      "from": [
+        8.912857142857142,
+        5.647142857142857,
+        3.8
+      ],
+      "to": [
+        9.115714285714287,
+        5.85,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_3_0_0_back",
+      "from": [
+        6.884285714285714,
+        5.647142857142857,
+        12.17
+      ],
+      "to": [
+        7.087142857142857,
+        5.85,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_3_0_2_front",
+      "from": [
+        8.507142857142856,
+        5.647142857142857,
+        3.8
+      ],
+      "to": [
+        8.71,
+        5.85,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_3_0_2_back",
+      "from": [
+        7.29,
+        5.647142857142857,
+        12.17
+      ],
+      "to": [
+        7.492857142857143,
+        5.85,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_3_1_0_front",
+      "from": [
+        8.71,
+        5.444285714285714,
+        3.8
+      ],
+      "to": [
+        9.115714285714287,
+        5.647142857142857,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_3_1_0_back",
+      "from": [
+        6.884285714285714,
+        5.444285714285714,
+        12.17
+      ],
+      "to": [
+        7.29,
+        5.647142857142857,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_3_2_0_front",
+      "from": [
+        8.912857142857142,
+        5.241428571428571,
+        3.8
+      ],
+      "to": [
+        9.115714285714287,
+        5.444285714285714,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_3_2_0_back",
+      "from": [
+        6.884285714285714,
+        5.241428571428571,
+        12.17
+      ],
+      "to": [
+        7.087142857142857,
+        5.444285714285714,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_3_3_0_front",
+      "from": [
+        8.71,
+        5.038571428571428,
+        3.8
+      ],
+      "to": [
+        9.115714285714287,
+        5.241428571428571,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_3_3_0_back",
+      "from": [
+        6.884285714285714,
+        5.038571428571428,
+        12.17
+      ],
+      "to": [
+        7.29,
+        5.241428571428571,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_3_4_0_front",
+      "from": [
+        8.912857142857142,
+        4.835714285714285,
+        3.8
+      ],
+      "to": [
+        9.115714285714287,
+        5.038571428571428,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_3_4_0_back",
+      "from": [
+        6.884285714285714,
+        4.835714285714285,
+        12.17
+      ],
+      "to": [
+        7.087142857142857,
+        5.038571428571428,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_3_4_2_front",
+      "from": [
+        8.507142857142856,
+        4.835714285714285,
+        3.8
+      ],
+      "to": [
+        8.71,
+        5.038571428571428,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_3_4_2_back",
+      "from": [
+        7.29,
+        4.835714285714285,
+        12.17
+      ],
+      "to": [
+        7.492857142857143,
+        5.038571428571428,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_4_0_0_front",
+      "from": [
+        7.695714285714285,
+        5.647142857142857,
+        3.8
+      ],
+      "to": [
+        8.304285714285715,
+        5.85,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_4_0_0_back",
+      "from": [
+        7.695714285714286,
+        5.647142857142857,
+        12.17
+      ],
+      "to": [
+        8.304285714285715,
+        5.85,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_4_1_0_front",
+      "from": [
+        8.10142857142857,
+        5.444285714285714,
+        3.8
+      ],
+      "to": [
+        8.304285714285715,
+        5.647142857142857,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_4_1_0_back",
+      "from": [
+        7.695714285714286,
+        5.444285714285714,
+        12.17
+      ],
+      "to": [
+        7.898571428571429,
+        5.647142857142857,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_4_2_0_front",
+      "from": [
+        7.695714285714285,
+        5.241428571428571,
+        3.8
+      ],
+      "to": [
+        8.304285714285715,
+        5.444285714285714,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_4_2_0_back",
+      "from": [
+        7.695714285714286,
+        5.241428571428571,
+        12.17
+      ],
+      "to": [
+        8.304285714285715,
+        5.444285714285714,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_4_3_2_front",
+      "from": [
+        7.695714285714285,
+        5.038571428571428,
+        3.8
+      ],
+      "to": [
+        7.8985714285714295,
+        5.241428571428571,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_4_3_2_back",
+      "from": [
+        8.10142857142857,
+        5.038571428571428,
+        12.17
+      ],
+      "to": [
+        8.304285714285715,
+        5.241428571428571,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_4_4_0_front",
+      "from": [
+        7.695714285714285,
+        4.835714285714285,
+        3.8
+      ],
+      "to": [
+        8.304285714285715,
+        5.038571428571428,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_4_4_0_back",
+      "from": [
+        7.695714285714286,
+        4.835714285714285,
+        12.17
+      ],
+      "to": [
+        8.304285714285715,
+        5.038571428571428,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_5_0_0_front",
+      "from": [
+        7.289999999999999,
+        5.647142857142857,
+        3.8
+      ],
+      "to": [
+        7.492857142857144,
+        5.85,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_5_0_0_back",
+      "from": [
+        8.507142857142856,
+        5.647142857142857,
+        12.17
+      ],
+      "to": [
+        8.71,
+        5.85,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_5_0_2_front",
+      "from": [
+        6.8842857142857135,
+        5.647142857142857,
+        3.8
+      ],
+      "to": [
+        7.087142857142858,
+        5.85,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_5_0_2_back",
+      "from": [
+        8.912857142857142,
+        5.647142857142857,
+        12.17
+      ],
+      "to": [
+        9.115714285714287,
+        5.85,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_5_1_0_front",
+      "from": [
+        7.289999999999999,
+        5.444285714285714,
+        3.8
+      ],
+      "to": [
+        7.492857142857144,
+        5.647142857142857,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_5_1_0_back",
+      "from": [
+        8.507142857142856,
+        5.444285714285714,
+        12.17
+      ],
+      "to": [
+        8.71,
+        5.647142857142857,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_5_1_2_front",
+      "from": [
+        6.8842857142857135,
+        5.444285714285714,
+        3.8
+      ],
+      "to": [
+        7.087142857142858,
+        5.647142857142857,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_5_1_2_back",
+      "from": [
+        8.912857142857142,
+        5.444285714285714,
+        12.17
+      ],
+      "to": [
+        9.115714285714287,
+        5.647142857142857,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_5_2_0_front",
+      "from": [
+        6.8842857142857135,
+        5.241428571428571,
+        3.8
+      ],
+      "to": [
+        7.492857142857144,
+        5.444285714285714,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_5_2_0_back",
+      "from": [
+        8.507142857142856,
+        5.241428571428571,
+        12.17
+      ],
+      "to": [
+        9.115714285714287,
+        5.444285714285714,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_5_3_0_front",
+      "from": [
+        7.289999999999999,
+        5.038571428571428,
+        3.8
+      ],
+      "to": [
+        7.492857142857144,
+        5.241428571428571,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_5_3_0_back",
+      "from": [
+        8.507142857142856,
+        5.038571428571428,
+        12.17
+      ],
+      "to": [
+        8.71,
+        5.241428571428571,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_5_3_2_front",
+      "from": [
+        6.8842857142857135,
+        5.038571428571428,
+        3.8
+      ],
+      "to": [
+        7.087142857142858,
+        5.241428571428571,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_5_3_2_back",
+      "from": [
+        8.912857142857142,
+        5.038571428571428,
+        12.17
+      ],
+      "to": [
+        9.115714285714287,
+        5.241428571428571,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_5_4_0_front",
+      "from": [
+        7.289999999999999,
+        4.835714285714285,
+        3.8
+      ],
+      "to": [
+        7.492857142857144,
+        5.038571428571428,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_5_4_0_back",
+      "from": [
+        8.507142857142856,
+        4.835714285714285,
+        12.17
+      ],
+      "to": [
+        8.71,
+        5.038571428571428,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_5_4_2_front",
+      "from": [
+        6.8842857142857135,
+        4.835714285714285,
+        3.8
+      ],
+      "to": [
+        7.087142857142858,
+        5.038571428571428,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_5_4_2_back",
+      "from": [
+        8.912857142857142,
+        4.835714285714285,
+        12.17
+      ],
+      "to": [
+        9.115714285714287,
+        5.038571428571428,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_6_0_1_front",
+      "from": [
+        6.275714285714287,
+        5.647142857142857,
+        3.8
+      ],
+      "to": [
+        6.478571428571428,
+        5.85,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_6_0_1_back",
+      "from": [
+        9.521428571428572,
+        5.647142857142857,
+        12.17
+      ],
+      "to": [
+        9.724285714285713,
+        5.85,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_6_1_0_front",
+      "from": [
+        6.478571428571428,
+        5.444285714285714,
+        3.8
+      ],
+      "to": [
+        6.681428571428572,
+        5.647142857142857,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_6_1_0_back",
+      "from": [
+        9.318571428571428,
+        5.444285714285714,
+        12.17
+      ],
+      "to": [
+        9.521428571428572,
+        5.647142857142857,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_6_1_2_front",
+      "from": [
+        6.072857142857142,
+        5.444285714285714,
+        3.8
+      ],
+      "to": [
+        6.275714285714287,
+        5.647142857142857,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_6_1_2_back",
+      "from": [
+        9.724285714285713,
+        5.444285714285714,
+        12.17
+      ],
+      "to": [
+        9.927142857142858,
+        5.647142857142857,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_6_2_0_front",
+      "from": [
+        6.072857142857142,
+        5.241428571428571,
+        3.8
+      ],
+      "to": [
+        6.681428571428572,
+        5.444285714285714,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_6_2_0_back",
+      "from": [
+        9.318571428571428,
+        5.241428571428571,
+        12.17
+      ],
+      "to": [
+        9.927142857142858,
+        5.444285714285714,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_6_3_0_front",
+      "from": [
+        6.478571428571428,
+        5.038571428571428,
+        3.8
+      ],
+      "to": [
+        6.681428571428572,
+        5.241428571428571,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_6_3_0_back",
+      "from": [
+        9.318571428571428,
+        5.038571428571428,
+        12.17
+      ],
+      "to": [
+        9.521428571428572,
+        5.241428571428571,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_6_3_2_front",
+      "from": [
+        6.072857142857142,
+        5.038571428571428,
+        3.8
+      ],
+      "to": [
+        6.275714285714287,
+        5.241428571428571,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_6_3_2_back",
+      "from": [
+        9.724285714285713,
+        5.038571428571428,
+        12.17
+      ],
+      "to": [
+        9.927142857142858,
+        5.241428571428571,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_6_4_0_front",
+      "from": [
+        6.478571428571428,
+        4.835714285714285,
+        3.8
+      ],
+      "to": [
+        6.681428571428572,
+        5.038571428571428,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_6_4_0_back",
+      "from": [
+        9.318571428571428,
+        4.835714285714285,
+        12.17
+      ],
+      "to": [
+        9.521428571428572,
+        5.038571428571428,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_6_4_2_front",
+      "from": [
+        6.072857142857142,
+        4.835714285714285,
+        3.8
+      ],
+      "to": [
+        6.275714285714287,
+        5.038571428571428,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_6_4_2_back",
+      "from": [
+        9.724285714285713,
+        4.835714285714285,
+        12.17
+      ],
+      "to": [
+        9.927142857142858,
+        5.038571428571428,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_7_0_0_front",
+      "from": [
+        5.667142857142856,
+        5.647142857142857,
+        3.8
+      ],
+      "to": [
+        5.870000000000001,
+        5.85,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_7_0_0_back",
+      "from": [
+        10.129999999999999,
+        5.647142857142857,
+        12.17
+      ],
+      "to": [
+        10.332857142857144,
+        5.85,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_7_0_2_front",
+      "from": [
+        5.261428571428571,
+        5.647142857142857,
+        3.8
+      ],
+      "to": [
+        5.464285714285715,
+        5.85,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_7_0_2_back",
+      "from": [
+        10.535714285714285,
+        5.647142857142857,
+        12.17
+      ],
+      "to": [
+        10.73857142857143,
+        5.85,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_7_1_0_front",
+      "from": [
+        5.464285714285715,
+        5.444285714285714,
+        3.8
+      ],
+      "to": [
+        5.870000000000001,
+        5.647142857142857,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_7_1_0_back",
+      "from": [
+        10.129999999999999,
+        5.444285714285714,
+        12.17
+      ],
+      "to": [
+        10.535714285714285,
+        5.647142857142857,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_7_2_0_front",
+      "from": [
+        5.667142857142856,
+        5.241428571428571,
+        3.8
+      ],
+      "to": [
+        5.870000000000001,
+        5.444285714285714,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_7_2_0_back",
+      "from": [
+        10.129999999999999,
+        5.241428571428571,
+        12.17
+      ],
+      "to": [
+        10.332857142857144,
+        5.444285714285714,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_7_3_0_front",
+      "from": [
+        5.464285714285715,
+        5.038571428571428,
+        3.8
+      ],
+      "to": [
+        5.870000000000001,
+        5.241428571428571,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_7_3_0_back",
+      "from": [
+        10.129999999999999,
+        5.038571428571428,
+        12.17
+      ],
+      "to": [
+        10.535714285714285,
+        5.241428571428571,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_7_4_0_front",
+      "from": [
+        5.667142857142856,
+        4.835714285714285,
+        3.8
+      ],
+      "to": [
+        5.870000000000001,
+        5.038571428571428,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_7_4_0_back",
+      "from": [
+        10.129999999999999,
+        4.835714285714285,
+        12.17
+      ],
+      "to": [
+        10.332857142857144,
+        5.038571428571428,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_7_4_2_front",
+      "from": [
+        5.261428571428571,
+        4.835714285714285,
+        3.8
+      ],
+      "to": [
+        5.464285714285715,
+        5.038571428571428,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_7_4_2_back",
+      "from": [
+        10.535714285714285,
+        4.835714285714285,
+        12.17
+      ],
+      "to": [
+        10.73857142857143,
+        5.038571428571428,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_8_0_0_front",
+      "from": [
+        4.449999999999999,
+        5.647142857142857,
+        3.8
+      ],
+      "to": [
+        5.05857142857143,
+        5.85,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_8_0_0_back",
+      "from": [
+        10.94142857142857,
+        5.647142857142857,
+        12.17
+      ],
+      "to": [
+        11.55,
+        5.85,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_8_1_0_front",
+      "from": [
+        4.855714285714285,
+        5.444285714285714,
+        3.8
+      ],
+      "to": [
+        5.05857142857143,
+        5.647142857142857,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_8_1_0_back",
+      "from": [
+        10.94142857142857,
+        5.444285714285714,
+        12.17
+      ],
+      "to": [
+        11.144285714285715,
+        5.647142857142857,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_8_2_0_front",
+      "from": [
+        4.652857142857144,
+        5.241428571428571,
+        3.8
+      ],
+      "to": [
+        5.05857142857143,
+        5.444285714285714,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_8_2_0_back",
+      "from": [
+        10.94142857142857,
+        5.241428571428571,
+        12.17
+      ],
+      "to": [
+        11.347142857142856,
+        5.444285714285714,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_8_3_0_front",
+      "from": [
+        4.855714285714285,
+        5.038571428571428,
+        3.8
+      ],
+      "to": [
+        5.05857142857143,
+        5.241428571428571,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_8_3_0_back",
+      "from": [
+        10.94142857142857,
+        5.038571428571428,
+        12.17
+      ],
+      "to": [
+        11.144285714285715,
+        5.241428571428571,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_8_4_0_front",
+      "from": [
+        4.449999999999999,
+        4.835714285714285,
+        3.8
+      ],
+      "to": [
+        5.05857142857143,
+        5.038571428571428,
+        3.83
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "label_MILKSHAKE_8_4_0_back",
+      "from": [
+        10.94142857142857,
+        4.835714285714285,
+        12.17
+      ],
+      "to": [
+        11.55,
+        5.038571428571428,
+        12.2
+      ],
+      "faces": {
+        "south": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "milkshake_straw",
+      "from": [
+        9.4,
+        9.4,
+        8.3
+      ],
+      "to": [
+        10.0,
+        14.2,
+        8.9
+      ],
+      "faces": {
+        "north": {
+          "texture": "#label"
+        },
+        "south": {
+          "texture": "#label"
+        },
+        "east": {
+          "texture": "#label"
+        },
+        "west": {
+          "texture": "#label"
+        },
+        "up": {
+          "texture": "#label"
+        },
+        "down": {
+          "texture": "#label"
+        }
+      }
+    },
+    {
+      "name": "straw_stripe",
+      "from": [
+        9.38,
+        12.2,
+        8.28
+      ],
+      "to": [
+        10.02,
+        12.65,
+        8.92
+      ],
+      "faces": {
+        "north": {
+          "texture": "#sleeve"
+        },
+        "south": {
+          "texture": "#sleeve"
+        },
+        "east": {
+          "texture": "#sleeve"
+        },
+        "west": {
+          "texture": "#sleeve"
+        },
+        "up": {
+          "texture": "#sleeve"
+        },
+        "down": {
+          "texture": "#sleeve"
+        }
+      }
+    }
+  ],
+  "display": {
+    "gui": {
+      "rotation": [
+        25,
+        225,
+        0
+      ],
+      "translation": [
+        0,
+        -1,
+        0
+      ],
+      "scale": [
+        0.9,
+        0.9,
+        0.9
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        0,
+        -30,
+        0
+      ],
+      "translation": [
+        -1.5,
+        5.5,
+        0
+      ],
+      "scale": [
+        0.42,
+        0.42,
+        0.42
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        3,
+        0
+      ],
+      "scale": [
+        0.55,
+        0.55,
+        0.55
+      ]
+    }
+  }
+}

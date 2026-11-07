@@ -1,0 +1,1 @@
+fn injected(game: &crate::game::Game<'_>, mob: &crate::game::native_mob_draw::NativeMobRender<'_>, draw: &mut crate::game::native_block_entity_draw::BlockEntityDraw) { crate::game::karak_tea::uniform(game,mob,draw); }

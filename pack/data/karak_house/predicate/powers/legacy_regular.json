@@ -1,0 +1,44 @@
+{
+  "type": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "minecraft:effects": {
+      "minecraft:strength": {
+        "amplifier": {
+          "min": 3,
+          "max": 3
+        }
+      },
+      "minecraft:speed": {
+        "amplifier": {
+          "min": 2,
+          "max": 2
+        }
+      },
+      "minecraft:jump_boost": {
+        "amplifier": {
+          "min": 2,
+          "max": 2
+        }
+      },
+      "minecraft:resistance": {
+        "amplifier": {
+          "min": 1,
+          "max": 1
+        }
+      },
+      "minecraft:regeneration": {
+        "amplifier": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "minecraft:fire_resistance": {
+        "amplifier": {
+          "min": 0,
+          "max": 0
+        }
+      }
+    }
+  }
+}

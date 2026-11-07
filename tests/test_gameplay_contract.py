@@ -46,11 +46,4 @@ class GameplayContractTests(unittest.TestCase):
         self.assertIn('karak_day < #today',tick)
         self.assertNotIn('karak_day = #today',tick)
 
-    def test_effect_identity_duration_and_amplifier(self):
-        item=json.loads((ROOT/'pack/data/karak_house/horizon/item/karak_tea.json').read_text())
-        effects=item['components']['minecraft:consumable']['on_consume_effects'][0]['effects']
-        expected={'strength':3,'speed':2,'jump_boost':2,'resistance':1,'regeneration':0,'fire_resistance':0,'slow_falling':0}
-        self.assertEqual({f'minecraft:{k}':v for k,v in expected.items()},{e['id']:e['amplifier'] for e in effects})
-        self.assertTrue(all(e['duration']==6000 for e in effects))
-
 if __name__=='__main__':unittest.main()

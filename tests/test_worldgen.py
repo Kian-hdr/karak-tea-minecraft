@@ -7,7 +7,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from worldgen import write_worldgen
-from validate_villages import STYLES, block_state, summarize, transformed
+from validate_villages import STYLES, block_state, summarize, transformed, transformed_point
 
 
 class WorldgenContract(unittest.TestCase):
@@ -40,6 +40,12 @@ class WorldgenContract(unittest.TestCase):
                     'CLOCKWISE_180': (7, 24, 25), 'COUNTERCLOCKWISE_90': (15, 24, 27)}
         for rotation, position in expected.items():
             self.assertEqual(transformed(dict(PosX=10, PosY=20, PosZ=30, rotation=rotation), 3, 4, 5), position)
+
+    def test_player_cell_centers_rotate_to_block_cell_centers(self):
+        for rotation in ('NONE','CLOCKWISE_90','CLOCKWISE_180','COUNTERCLOCKWISE_90'):
+            piece=dict(PosX=10,PosY=20,PosZ=30,rotation=rotation)
+            bx,by,bz=transformed(piece,6,0,-1)
+            self.assertEqual(transformed_point(piece,6.5,.05,-.5),(bx+.5,by+.05,bz+.5))
 
     def test_heterogeneous_palette_wrapper_is_unwrapped(self):
         self.assertEqual(block_state({'': 'minecraft:dirt_path'}), {'id': 'minecraft:dirt_path'})
