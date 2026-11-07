@@ -1,14 +1,6 @@
-# Upstream attribution
-
-The scoped merchant adapter follows and preserves the small stock open-method
-sequence and uses Horizon's public native contracts. Upstream portions are
-from Horizon commit66f3981f522b24c250b21523a70080965b940424, under MIT. The
-following notice applies to those portions and does not change the owner's
-licensing decision for the rest of this private add-on.
-
 MIT License
 
-Copyright (c) 2026 Ludovic Marie and the Horizon contributors
+Copyright (c) 2026 Kian Konrad Tajbakhsh
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

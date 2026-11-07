@@ -237,8 +237,8 @@ def export_map(world: Path, destination: Path) -> dict:
         readme_info = zipfile.ZipInfo("README.txt", (2026, 11, 7, 0, 0, 0))
         readme_info.compress_type = zipfile.ZIP_DEFLATED
         output.writestr(readme_info, "Karak Tea five-house showcase\n\n"
-                        "Requires Horizon revision 66f3981, Karak Tea 0.2.0 and its native extension.\n"
-                        "Install and enable the matching .hmod and native client before opening this world.\n" + mod_pin +
+                        "Requires Horizon revision 66f3981 and Karak Tea 0.2.0.\n"
+                        "Install and enable the matching .hmod before opening this world.\n" + mod_pin +
                         "Put the Karak_Tea_Showcase folder into the chosen instance's saves folder.\n"
                         "Spawn: 6 65 -5. Five shops share the paved boulevard to the south.\n"
                         "Emerald and milk/bread supply chests are labeled at spawn.\n"

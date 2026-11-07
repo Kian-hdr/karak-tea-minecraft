@@ -1,1 +1,0 @@
-fn injected(game: &crate::game::Game<'_>, host: &crate::game::lan::LanHost, conn: u32) { horizon_client::menu::karak_tea_core::set_operation_intent(crate::game::karak_tea::guest_active(game,host,conn)); }

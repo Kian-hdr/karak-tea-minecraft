@@ -1,83 +1,67 @@
-# Karak Tea for Minecraft Horizon
+<div align="center">
 
-A personal Minecraft mod for the Rust-based Horizon client. Discover modern Karak Houses in villages and buy superhero tea.
+# Karak Tea
 
-**Development build. Not yet qualified for public download.**
+**A little taste of Dubai in your Minecraft villages.**<br>
+Find a Karak House, meet its seller, and enjoy a cup with extraordinary powers.
 
-The repository remains private until gameplay acceptance tests pass.
+[![Download Karak Tea](docs/assets/download_mod.svg)](https://github.com/Kian-hdr/karak-tea-minecraft/releases/download/v0.2.0/Karak_Tea_0.2.0.hmod)
 
-## Current preview
+**Horizon 26.3 · Nightly `66f3981` · Version 0.2.0**<br>
+[Installation](#install) · [The menu](#the-menu) · [House gallery](#house-gallery) · [Contributing](#make-it-your-own)
 
-[The 0.2.0 menu and stacking rules](docs/Menu_0.2.0.md) are available in the new private showcase. Final visual review and end-to-end qualification remain open.
+</div>
 
-## Gameplay
+> **UNOFFICIAL MINECRAFT MOD. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.**<br>
+> Created by Kian Konrad · Contact: [contact@kiankonrad.me](mailto:contact@kiankonrad.me)
 
-- Maximum one Karak House per village, with five biome-specific designs.
-- One emerald buys exactly one Karak Tea. No copper or random prices.
-- Each seller has an independent 10% daily chance of offering one free cup.
-- Karak Sellers wear a cream cap and vanilla butcher apron on the standard client. Existing seller headgear is preserved.
-- Drinks have distinct powers and durations; regular Karak grants six status effects and fall protection for five minutes.
+![A Karak House in the savanna](docs/screenshots/savanna_exterior.webp)
 
-## Compatibility
+## Visit a Karak House
 
-Targets Horizon nightly-2026-11-05-66f3981 as a standard Horizon content pack. No custom client or native extension is required. This is not a Fabric, Forge, NeoForge, or Bedrock mod. Requires the player’s own Minecraft Java Edition through Horizon.
+Karak Houses appear in newly generated villages, with a design suited to the local landscape. Follow the village path to a shop, meet the seller behind the counter, and trade emeralds for a drink. Each village can have up to one Karak House.
 
-## Installation and play
+Each seller has a **10% chance each Minecraft day** to offer a complimentary regular Karak Tea. The first player to claim it gets one cup, and the paid menu stays available.
 
-See [Installation](docs/Installation.md) for the development-preview setup, prices, free cups, power effects and removal instructions.
+## Install
 
-## Development
+1. Download the [Karak Tea 0.2.0 mod](https://github.com/Kian-hdr/karak-tea-minecraft/releases/download/v0.2.0/Karak_Tea_0.2.0.hmod).
+2. In Horizon, open the game folder for the instance you want to use and place the file in its `horizon-mods` folder.
+3. Start the instance, open **Options → Mods**, and enable **Karak Tea**.
+4. Restart the game, then explore newly generated villages.
 
-Source pack is in `pack/`. `scripts/build.py` builds the pack; gameplay and world-generation definitions live in separate modules.
+The pack targets Horizon nightly **2026-11-05 (`66f3981`)**, using the standard Horizon client. See the [installation guide](docs/Installation.md) for details.
 
-## Attribution
+## The menu
 
-Inspired by Dubai karak tea shops. Independent fan project, not affiliated with Karak House, Mojang, Microsoft, or Horizon. Minecraft textures are referenced from the player’s installation and are not redistributed.
+Each trade gives one serving. Prices below are the seller’s **base prices**; Horizon’s villager effects can change higher-priced offers.
 
-## Design review
+| Drink | Base price | Duration | Powers |
+|:--|--:|:--|:--|
+| **Karak Tea** | 1 emerald | 5 min | Strength IV, Speed III, Jump Boost III, Resistance II, Regeneration I, Fire Resistance and fall protection |
+| **Iced Karak** | 1 emerald | 5 min | Fire Resistance and Water Breathing |
+| **Decaf Karak** | 1 emerald | 5 min | Night Vision and Regeneration I |
+| **Karak Milkshake** | 2 emeralds | 5 min | Clears harmful effects, then rapidly clears Poison, Nausea and Hunger |
+| **Karak Protein Shake** | 3 emeralds | 5 min | Strength VII |
+| **Karak Pro Max** | 8 emeralds | 30 min | Strength VI, Speed IV, Jump Boost IV, Resistance III, Regeneration II, Fire Resistance and fall protection |
 
-Village integration and public release are held for the owner’s review. The images below are isolated design previews rendered in Horizon, not evidence of completed village-generation or gameplay acceptance.
+Different drinks stack their powers and expire independently. Drinking the same variety again refreshes its timer. See the [full menu](docs/Menu_0.2.0.md) for details.
 
-### Drinks
+## House gallery
 
-The six in-game cup designs have distinct shapes and labels. These screenshots show the current private preview.
+Five designs bring the same modern tea-house feel to different village styles. Each has a paved approach, a tea counter, seating and its own materials.
 
-Inventory and hotbar use separate pixel-style icons; the cups remain three-dimensional in hand.
+<table>
+<tr><td align="center"><strong>Plains</strong><br><img src="docs/screenshots/plains_exterior.webp" alt="Plains Karak House" width="440"></td><td align="center"><strong>Desert</strong><br><img src="docs/screenshots/desert_exterior.webp" alt="Desert Karak House" width="440"></td></tr>
+<tr><td align="center"><strong>Savanna</strong><br><img src="docs/screenshots/savanna_exterior.webp" alt="Savanna Karak House" width="440"></td><td align="center"><strong>Taiga</strong><br><img src="docs/screenshots/taiga_exterior.webp" alt="Taiga Karak House" width="440"></td></tr>
+<tr><td align="center"><strong>Snowy</strong><br><img src="docs/screenshots/snowy_rear.webp" alt="Rear of the snowy Karak House" width="440"></td><td align="center"><strong>Meet the seller</strong><br><img src="docs/screenshots/karak_seller.webp" alt="Karak Seller wearing a cream cap and apron" width="440"></td></tr>
+</table>
 
-![Six drink icons in the inventory](docs/screenshots/inventory_icons.webp)
+Each drink has its own cup and pixel-style inventory icon, with a three-dimensional model when held.
 
-![Karak Tea](docs/screenshots/karak_tea.webp)
-![Iced Karak](docs/screenshots/iced_karak.webp)
-![Decaf Karak](docs/screenshots/decaf_karak.webp)
-![Karak Milkshake](docs/screenshots/karak_milkshake.webp)
-![Karak Protein Shake](docs/screenshots/karak_protein_shake.webp)
-![Karak Pro Max](docs/screenshots/karak_pro_max.webp)
+## Make it your own
 
-### Seller
-
-![Karak Seller with cream cap and apron](docs/screenshots/karak_seller.webp)
-
-### Plains
-
-![Plains exterior](docs/screenshots/plains_exterior.webp)
-
-### Desert
-
-![Desert exterior](docs/screenshots/desert_exterior.webp)
-
-### Savanna
-
-![Savanna exterior](docs/screenshots/savanna_exterior.webp)
-
-### Taiga
-
-![Taiga exterior](docs/screenshots/taiga_exterior.webp)
-
-### Snowy
-
-![Snowy exterior](docs/screenshots/snowy_exterior.webp)
-
-## Build the pack
+Karak Tea is open source under the [MIT License](LICENSE). Explore the editable structures, models and functions in `pack/`, and the generators in `scripts/`. Contributions are welcome through pull requests.
 
 ```sh
 python3 -m venv .venv
@@ -86,8 +70,4 @@ python3 -m venv .venv
 .venv/bin/python -m unittest discover -s tests -v
 ```
 
-Build output: `dist/Karak_Tea_0.2.0.hmod`. Development-only until acceptance testing is complete.
-
-## License
-
-Original mod source, models, structures and documentation are under the [MIT License](LICENSE). Referenced Minecraft assets remain the property of their respective owners and are supplied by the player’s Minecraft installation.
+Inspired by Dubai’s karak tea culture. Minecraft assets are supplied through the player’s game installation. For questions about the project, contact [contact@kiankonrad.me](mailto:contact@kiankonrad.me).

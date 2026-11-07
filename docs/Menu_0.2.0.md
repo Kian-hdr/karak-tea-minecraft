@@ -1,6 +1,6 @@
 # Karak Tea 0.2.0 menu
 
-This preview uses the standard Horizon client.
+The menu is available from the Karak Seller in each Karak House. Prices are base prices; villager effects can change higher-priced offers.
 
 | Drink | Base price | Duration | Powers |
 |---|---:|---:|---|
@@ -17,4 +17,4 @@ The Milkshake keeps beneficial Karak powers. Ordinary Minecraft milk clears all 
 
 Each drink has its own design: the signature square glass jar, tall iced tumbler with straw, handled Decaf cup, Milkshake cup and straw, Protein shaker, and taller oversized Pro Max jar. The occasional free cup remains regular Karak Tea.
 
-This pack uses Horizon's standard villager trade screen. Its second ingredient slot remains visible and empty; copper cannot pay. Sellers wear a cream cap and the vanilla butcher apron. Hero of the Village can discount the higher-priced drinks. On the standard client, Poison can cause an initial damage tick before the Milkshake clears it.
+Sellers wear a cream cap and apron. The Milkshake rapidly clears Poison, Nausea, and Hunger; Poison can cause an initial damage tick before it is cleared.

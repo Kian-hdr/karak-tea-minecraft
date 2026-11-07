@@ -1,13 +1,12 @@
 # Install Karak Tea
 
-Karak Tea 0.2.0 is a private development preview for Horizon revision `66f3981`, tested on Apple Silicon macOS. It is a standard Horizon content pack and needs no custom client or native extension. Java/Fabric/Forge are not supported.
+Karak Tea 0.2.0 targets **Horizon nightly 2026-11-05, revision `66f3981`**, and was tested on Apple Silicon macOS.
 
-The prepared local instance is **Karak_Tea_0_2**. Select it in Horizon and open **Karak_Tea_Showcase** to inspect the five houses and try the sellers. The showcase includes emeralds and milk. Existing villages are not changed; shops generate in new terrain.
+1. Download [Karak Tea 0.2.0](https://github.com/Kian-hdr/karak-tea-minecraft/releases/download/v0.2.0/Karak_Tea_0.2.0.hmod).
+2. Open the game folder for your Horizon instance and place the downloaded file in `horizon-mods`.
+3. Start Horizon, open **Options → Mods**, and enable **Karak Tea**.
+4. Restart the game. Explore newly generated villages to find Karak Houses and their sellers.
 
-For a separate instance, close its game, install `Karak_Tea_0.2.0.hmod` in its `horizon-mods` folder, enable Karak Tea in Options → Mods, and start Horizon normally. Keep only one content-pack version enabled. Sellers use a cream cap and the vanilla butcher apron with the normal villager trade screen. Existing seller headgear is preserved.
+A regular Karak Tea costs one emerald. Explore the [menu](Menu_0.2.0.md) for the full selection, prices, and powers. Each seller also has a daily chance to offer a complimentary regular cup.
 
-A regular Karak Tea costs one emerald for one cup. The menu offers other drinks with their own prices and effects; see [Menu_0.2.0.md](Menu_0.2.0.md). Each seller has a separate daily chance to offer one free regular tea. All drinks contribute independently; milk or death clears their powers.
-
-Before removing the pack, drink normal milk to clear active Karak effects, close the world, and back up any save you want to retain. Disable the mod in Options → Mods and remove the pack only after closing the game. Buildings already generated remain; removal with active effects or custom items has not been qualified.
-
-The project remains private while final qualification and design review are unfinished. Other operating systems and simultaneous multiplayer claims have not been qualified.
+To remove the pack, first clear active drink effects with milk, close the world, and back up any save you want to keep. Then disable the mod and remove the pack after closing the game. Buildings already generated remain in the world.
