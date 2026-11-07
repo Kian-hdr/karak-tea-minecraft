@@ -60,3 +60,5 @@ The exact installed stock-client pack (`b071049419ce925ffe0aa31e2a996c245f003f12
 ## Standard-client seller clothing
 
 The owner approved a cream cap and vanilla butcher apron as the stock-client approximation. In a disposable world, the cap, actual purchase, daily restock, non-dropping cap, save/reload and one-time migration were tested. Existing headgear, offer data and giveaway scores were preserved; ordinary villagers were unchanged. This is not the originally pictured full cream coat and gloves. A seller with an occupied head slot keeps that headgear.
+
+The installed standard-client pack was checked in the owner's existing showcase after a fresh backup: all five tagged sellers had the cap, butcher profession, and one-emerald regular input. After save, quit, and reopen, all five caps and regular inputs persisted. No trade or player movement was performed in the owner's world; actual transactions and effects were tested in disposable copies.
