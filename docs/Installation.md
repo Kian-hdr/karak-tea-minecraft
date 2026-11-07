@@ -4,7 +4,7 @@ Karak Tea 0.2.0 is a private development preview for Horizon revision `66f3981`,
 
 The prepared local instance is **Karak_Tea_0_2**. Select it in Horizon and open **Karak_Tea_Showcase** to inspect the five houses and try the sellers. The showcase includes emeralds and milk. Existing villages are not changed; shops generate in new terrain.
 
-For a separate instance, close its game, install `Karak_Tea_0.2.0.hmod` in its `horizon-mods` folder, enable Karak Tea in Options → Mods, and start Horizon normally. Keep only one content-pack version enabled. Sellers use the normal villager appearance and trade screen.
+For a separate instance, close its game, install `Karak_Tea_0.2.0.hmod` in its `horizon-mods` folder, enable Karak Tea in Options → Mods, and start Horizon normally. Keep only one content-pack version enabled. Sellers use a cream cap and the vanilla butcher apron with the normal villager trade screen. Existing seller headgear is preserved.
 
 A regular Karak Tea costs one emerald for one cup. The menu offers other drinks with their own prices and effects; see [Menu_0.2.0.md](Menu_0.2.0.md). Each seller has a separate daily chance to offer one free regular tea. All drinks contribute independently; milk or death clears their powers.
 

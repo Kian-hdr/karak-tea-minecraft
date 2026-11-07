@@ -17,4 +17,4 @@ The Milkshake keeps beneficial Karak powers. Ordinary Minecraft milk clears all 
 
 Each drink has its own design: the signature square glass jar, tall iced tumbler with straw, handled Decaf cup, Milkshake cup and straw, Protein shaker, and taller oversized Pro Max jar. The occasional free cup remains regular Karak Tea.
 
-This pack uses Horizon's standard villager trade screen. Its second ingredient slot remains visible and empty; copper cannot pay. Sellers use normal villager clothing. Hero of the Village can discount the higher-priced drinks. On the standard client, Poison can cause an initial damage tick before the Milkshake clears it.
+This pack uses Horizon's standard villager trade screen. Its second ingredient slot remains visible and empty; copper cannot pay. Sellers wear a cream cap and the vanilla butcher apron. Hero of the Village can discount the higher-priced drinks. On the standard client, Poison can cause an initial damage tick before the Milkshake clears it.

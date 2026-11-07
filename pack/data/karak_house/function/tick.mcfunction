@@ -6,3 +6,4 @@ execute as @e[type=minecraft:villager,tag=karak_seller] if score @s karak_day < 
 execute as @e[type=minecraft:villager,tag=karak_seller] run function karak_house:stations/harden
 function karak_house:stations/tick
 function karak_house:doors/tick
+function karak_house:uniform/tick

@@ -19,7 +19,8 @@ def write_gameplay(write):
         # Villager jump bases are not restored from NBT on this pinned engine.
         'execute as @e[type=minecraft:villager,tag=karak_seller] run function karak_house:stations/harden\n'
         'function karak_house:stations/tick\n'
-        'function karak_house:doors/tick\n')
+        'function karak_house:doors/tick\n'
+        'function karak_house:uniform/tick\n')
     write('data/karak_house/function/new_day.mcfunction',
         'scoreboard players operation @s karak_day = #today karak_sys\n'
         'data modify entity @s Offers.Recipes[].uses set value 0\n'

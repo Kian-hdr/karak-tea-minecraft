@@ -10,6 +10,7 @@ from gameplay import write_gameplay
 from stations import seller_nbt, anchor_nbt, write_stations
 from cup_model import write_cup_model
 from gui_icons import write_gui_icons
+from chef_uniform import write_chef_uniform
 from catalog import CATALOG, offer, write_catalog
 from powers import write_powers, reconcile_owned_generated
 from doors import write_doors
@@ -226,7 +227,7 @@ def build():
     structures();write_worldgen(write,THEMES);write_gameplay(write);write_stations(write);write_doors(write,THEMES)
     emitted = write_powers(write)
     reconcile_owned_generated(PACK, emitted)
-    write_catalog(write);write_cup_model(write);write_gui_icons(write)
+    write_catalog(write);write_cup_model(write);write_gui_icons(write);write_chef_uniform(write)
     out=ROOT/'dist';out.mkdir(exist_ok=True)
     file=out/f'Karak_Tea_{VERSION}.hmod'
     with zipfile.ZipFile(file,'w',zipfile.ZIP_DEFLATED) as z:

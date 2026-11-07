@@ -54,3 +54,9 @@ A separate 20-second visible-window camera flight across the five-house showcase
 ## Content-mod compatibility sample
 
 On unchanged Horizon revision 66f3981, Karak Tea was loaded alongside one independent synthetic content mod. Both items worked before and after reload, and two naturally generated plains villages each contained one Karak House, the other mod's stall, and vanilla structures. This is a bounded compatibility check, not a guarantee for arbitrary modpacks. GUI-only pixel icons and their 3D held-model fallback were also checked in the stock client.
+
+The exact installed stock-client pack (`b071049419ce925ffe0aa31e2a996c245f003f1223a98da5d9a5ceecd2b3fd60`) was also tested in a disposable copy of the saved showcase. All six base-price purchases and drink effects passed, and seller state, offers and purchased inventory persisted after save/reopen. Milk cleared the effects. This test did not qualify first-tick Milkshake poison immunity or Hero-proof prices, which require native support.
+
+## Standard-client seller clothing
+
+The owner approved a cream cap and vanilla butcher apron as the stock-client approximation. In a disposable world, the cap, actual purchase, daily restock, non-dropping cap, save/reload and one-time migration were tested. Existing headgear, offer data and giveaway scores were preserved; ordinary villagers were unchanged. This is not the originally pictured full cream coat and gloves. A seller with an occupied head slot keeps that headgear.

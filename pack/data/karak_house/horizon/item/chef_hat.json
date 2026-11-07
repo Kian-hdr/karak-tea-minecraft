@@ -1,0 +1,8 @@
+{
+  "template": "minecraft:paper",
+  "max_stack_size": 1,
+  "components": {
+    "minecraft:item_name": "Chef Cap",
+    "minecraft:item_model": "karak_house:chef_hat"
+  }
+}

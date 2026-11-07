@@ -15,6 +15,7 @@ The repository remains private until gameplay acceptance tests pass.
 - Maximum one Karak House per village, with five biome-specific designs.
 - One emerald buys exactly one Karak Tea. No copper or random prices.
 - Each seller has an independent 10% daily chance of offering one free cup.
+- Karak Sellers wear a cream cap and vanilla butcher apron on the standard client. Existing seller headgear is preserved.
 - Drinks have distinct powers and durations; regular Karak grants six status effects and fall protection for five minutes.
 
 ## Compatibility
@@ -41,12 +42,20 @@ Village integration and public release are held for the owner’s review. The im
 
 The six in-game cup designs have distinct shapes and labels. These screenshots show the current private preview.
 
+Inventory and hotbar use separate pixel-style icons; the cups remain three-dimensional in hand.
+
+![Six drink icons in the inventory](docs/screenshots/inventory_icons.webp)
+
 ![Karak Tea](docs/screenshots/karak_tea.webp)
 ![Iced Karak](docs/screenshots/iced_karak.webp)
 ![Decaf Karak](docs/screenshots/decaf_karak.webp)
 ![Karak Milkshake](docs/screenshots/karak_milkshake.webp)
 ![Karak Protein Shake](docs/screenshots/karak_protein_shake.webp)
 ![Karak Pro Max](docs/screenshots/karak_pro_max.webp)
+
+### Seller
+
+![Karak Seller with cream cap and apron](docs/screenshots/karak_seller.webp)
 
 ### Plains
 
