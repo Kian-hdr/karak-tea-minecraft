@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Karak Tea: a glass of spiced tea</title>
+  <rect width="512" height="512" rx="104" fill="#2b1917"/>
+  <path d="M93 169 256 88 419 169 256 255Z" fill="#e8c7a0"/>
+  <path d="M93 169 256 255 256 424 93 337Z" fill="#d4b093"/>
+  <path d="M256 255 419 169 419 337 256 424Z" fill="#987564"/>
+  <path d="M117 169 256 101 395 169 256 241Z" fill="#422a22"/>
+  <path d="M135 169 256 110 377 169 256 229Z" fill="#bd772d"/>
+  <path d="M156 167 255 119 352 166 255 216Z" fill="#e0a74c"/>
+  <path d="M93 218 256 303 256 377 93 291Z" fill="#30201e"/>
+  <path d="M256 303 419 218 419 291 256 377Z" fill="#201615"/>
+  <path d="M113 190 128 198 128 220 113 212ZM113 303 128 311 128 329 113 321Z" fill="#fff0d6"/>
+  <path d="M400 195 386 202 386 220 400 213ZM400 303 386 310 386 328 400 321Z" fill="#f6dbbb"/>
+  <path d="M164 253 179 261 179 276 191 270 207 278 191 288 210 318 193 309 179 286 179 302 164 294Z" fill="#f8efe1"/>
+  <path d="M166 377 256 423 345 376 345 389 256 437 166 390Z" fill="#69463b"/>
+</svg>
