@@ -1,18 +1,20 @@
-<div align="center">
+<p align="center">
+  <a name="karak-tea"></a>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/README_Title_Dark.svg">
+    <img src="docs/assets/README_Title_Light.svg" width="182" alt="Karak Tea">
+  </picture>
+</p>
 
-<img src="docs/assets/karak_tea_icon.png" alt="Karak Tea glass icon" width="112">
+<p align="center"><strong>A little taste of Dubai in your Minecraft villages.</strong><br>
+Find a Karak House, meet its seller, and enjoy a cup with extraordinary powers.</p>
 
-# Karak Tea
+<p align="center"><img src="docs/assets/karak_tea_icon.png" alt="Karak Tea glass icon" width="112"></p>
 
-**A little taste of Dubai in your Minecraft villages.**<br>
-Find a Karak House, meet its seller, and enjoy a cup with extraordinary powers.
+<p align="center"><a href="https://github.com/Kian-hdr/karak-tea-minecraft/releases/download/v0.2.0/Karak_Tea_0.2.0.hmod"><img src="docs/assets/download_mod.svg" alt="Download Karak Tea"></a></p>
 
-[![Download Karak Tea](docs/assets/download_mod.svg)](https://github.com/Kian-hdr/karak-tea-minecraft/releases/download/v0.2.0/Karak_Tea_0.2.0.hmod)
-
-**Horizon 26.3 · Nightly `66f3981` · Version 0.2.0**<br>
-[Installation](#install) · [The menu](#the-menu) · [House gallery](#house-gallery) · [Contributing](#make-it-your-own)
-
-</div>
+<p align="center"><strong>Horizon 26.3 · Nightly <code>66f3981</code> · Version 0.2.0</strong><br>
+<a href="#install">Installation</a> · <a href="#the-menu">The menu</a> · <a href="#house-gallery">House gallery</a> · <a href="#make-it-your-own">Contributing</a></p>
 
 > **UNOFFICIAL MINECRAFT MOD. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.**<br>
 > Created by Kian Konrad · Contact: [contact@kiankonrad.me](mailto:contact@kiankonrad.me)
